@@ -29,7 +29,7 @@ export default function HomePage() {
           {[
             "Share your project requirements.",
             "My AI instantly plans, generates, and tests your code.",
-            "Receive a production-ready backend within 48–72 hours."
+            "Receive a production-ready MVP within 48–72 hours."
           ].map((step, index) => (
             <div key={index} className="flex items-start">
               <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
@@ -69,9 +69,27 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-center mb-10">Pricing</h2>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
-            { title: "Launch", icon: "🚀", desc: "Auth, CRUD, SQLite, Docs, Tests", delivery: "24–48 hrs", price: "€350" },
-            { title: "Grow", icon: "🌱", desc: "Launch + Admin CLI + more endpoints", delivery: "~72 hrs", price: "€750" },
-            { title: "Custom", icon: "⚙️", desc: "Complex integrations & tailored systems", delivery: "~1 week", price: "Custom Quote" }
+            {
+              title: "Standard",
+              icon: "🚀",
+              desc: "Core MVP with essential features, including authentication, CRUD operations, basic testing, and documentation.",
+              delivery: "24–48 hrs",
+              price: "€350"
+            },
+            {
+              title: "Advanced",
+              icon: "🌱",
+              desc: "Expanded MVP with additional functionality, such as admin tools, extended endpoints, and enhanced testing.",
+              delivery: "~72 hrs",
+              price: "€750"
+            },
+            {
+              title: "Custom",
+              icon: "⚙️",
+              desc: "Tailored MVP solutions with complex integrations, custom workflows, and specialized features.",
+              delivery: "~1 week",
+              price: "Custom Quote"
+            }
           ].map((tier) => (
             <div key={tier.title} className="border rounded-xl p-6 flex flex-col shadow-lg">
               <h3 className="text-xl font-bold mb-2">
