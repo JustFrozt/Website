@@ -72,21 +72,21 @@ export default function HomePage() {
             {
               title: "Standard",
               icon: "🚀",
-              desc: "Core MVP with essential features, including authentication, CRUD operations, basic testing, and documentation.",
+              desc: "A focused MVP: single backend, CLI, or automation tool with authentication, CRUD, tests, and docs. Get your core idea live fast.",
               delivery: "24–48 hrs",
               price: "€350"
             },
             {
               title: "Advanced",
               icon: "🌱",
-              desc: "Expanded MVP with additional functionality, such as admin tools, extended endpoints, and enhanced testing.",
+              desc: "A feature-rich MVP: multiple endpoints, admin panel, custom logic, data processing, or integrations. For more complex projects.",
               delivery: "~72 hrs",
               price: "€750"
             },
             {
               title: "Custom",
               icon: "⚙️",
-              desc: "Tailored MVP solutions with complex integrations, custom workflows, and specialized features.",
+              desc: "Completely tailored MVPs: cross-service workflows, special integrations, dashboards, unique business logic—built for your vision.",
               delivery: "~1 week",
               price: "Custom Quote"
             }
@@ -109,22 +109,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="py-20 px-6 bg-gray-50">
-        <h2 className="text-3xl font-semibold text-center mb-10">Meet the Creator</h2>
-        <p className="max-w-3xl mx-auto text-lg text-center">
-          I&apos;m a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I&apos;m redefining software development speed and quality.
-        </p>
-      </section>
-
       {/* FAQ */}
       <section id="faq" className="py-20 px-6 bg-white">
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
-            { q: "How is the process so fast?", a: "It&apos;s fully autonomous, instantly generating and validating code." },
+            { q: "How is the process so fast?", a: "It's fully autonomous, instantly generating and validating code." },
             { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment-ready." },
-            { q: "Do I pay upfront?", a: "No—pay only after you&apos;ve reviewed and approved your project." }
+            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl">
               <summary className="font-medium cursor-pointer select-none">{q}</summary>
@@ -134,18 +126,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-20 px-6 bg-gray-50">
-        <h2 className="text-3xl font-semibold text-center mb-10">Get Your Project Started</h2>
-        <iframe
-          src="https://docs.google.com/forms/d/e/your-form-url/viewform?embedded=true"
-          height="800"
-          className="w-full max-w-3xl mx-auto border rounded-xl bg-white shadow-lg"
-          loading="lazy"
-          title="Intake Form"
-        />
-      </section>
-
+      {/* FOOTER */}
       <footer className="py-6 text-center text-sm text-gray-500 bg-white">
         © {new Date().getFullYear()} ZeroFormAI — All Rights Reserved.
       </footer>
