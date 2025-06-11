@@ -6,30 +6,30 @@ export default function HomePage() {
       {/* HERO */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white to-gray-100">
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated <span className="text-indigo-600">Python</span> MVPs — Delivered by AI in 48 Hours
+          Fully Automated MVPs — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 mb-4">
-          Zeroform - Generating the future
+          Zeroform - Generating the future
         </p>
         <p className="max-w-2xl text-lg sm:text-xl mb-8">
-          Professional‑grade MVPs built exclusively in Python — back‑end services, APIs, data tools, and automation scripts. Auth, CRUD, tests, and docs included. Fast, reliable, affordable.
+          Professional‑grade back‑end MVPs built exclusively in Python — APIs, data pipelines, CLI tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase generated, committed, and ready to deploy.
         </p>
         <a
           href="#contact"
           className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 transition"
         >
-          Request Your MVP →
+          Request Your MVP →
         </a>
       </section>
 
       {/* HOW IT WORKS */}
       <section id="how" className="py-20 px-6 bg-white">
-        <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
+        <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
         <div className="max-w-3xl mx-auto space-y-4 text-lg">
           {[
             "Share your project requirements.",
-            "My AI instantly plans, generates, and tests your Python code.",
-            "Receive a production‑ready MVP within 48–72 hours."
+            "My AI plans, writes, and tests 100% of the Python code in a fresh repo.",
+            "Receive a production‑ready MVP within 48–72 hours."
           ].map((step, index) => (
             <div key={index} className="flex items-start">
               <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
@@ -43,9 +43,9 @@ export default function HomePage() {
 
       {/* TECHNOLOGY & SCOPE */}
       <section id="tech" className="py-20 px-6 bg-gray-50">
-        <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
+        <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center">
-          Zeroform currently builds <strong>only Python applications</strong>. That includes Flask/FastAPI back‑ends, data‑processing pipelines, CLI utilities, and automation scripts. Front‑end UIs, mobile apps, or services in other languages are outside of the present scope.
+          Zeroform currently produces <strong>Python‑only codebases</strong>. Supported outputs include Flask/FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, or projects requiring non‑Python runtimes are <strong>not yet supported</strong> unless you only need the Python back‑end portion.
         </p>
       </section>
 
@@ -67,7 +67,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
           >
-            View Source Code →
+            View Source Code →
           </a>
         </div>
       </section>
@@ -81,22 +81,22 @@ export default function HomePage() {
               title: "Standard",
               icon: "🐍",
               desc: "Core Python MVP: single back‑end service, CLI, or automation tool with auth, CRUD, tests, and docs.",
-              delivery: "24–48 hrs",
+              delivery: "24–48 hrs",
               price: "€350"
             },
             {
               title: "Advanced",
               icon: "✨",
-              desc: "Feature‑rich Python MVP: multiple endpoints, admin panel, data pipelines, or third‑party integrations.",
-              delivery: "~72 hrs",
+              desc: "Feature‑rich Python MVP: multi‑entity API, admin CLI, scheduled jobs, or third‑party integrations.",
+              delivery: "~72 hrs",
               price: "€750"
             },
             {
               title: "Custom",
               icon: "⚙️",
-              desc: "Tailored Python solutions: complex business logic, cross‑service orchestration, or specialised workflows.",
-              delivery: "~1 week",
-              price: "Custom Quote"
+              desc: "Complex Python solutions: cross‑service orchestration, data pipelines, or specialised workflows.",
+              delivery: "~1 week",
+              price: "Custom Quote"
             }
           ].map((tier) => (
             <div key={tier.title} className="border rounded-xl p-6 flex flex-col shadow-lg">
@@ -110,7 +110,7 @@ export default function HomePage() {
                 href="#contact"
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition text-center"
               >
-                Request {tier.title}
+                Request {tier.title}
               </a>
             </div>
           ))}
@@ -122,9 +122,10 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
-            { q: "How is the process so fast?", a: "It’s fully autonomous, instantly generating and validating Python code." },
+            { q: "How is the process so fast?", a: "It's fully autonomous, instantly generating and validating Python code." },
             { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment‑ready." },
-            { q: "Do I pay upfront?", a: "No—pay only after you’ve reviewed and approved your project." }
+            { q: "Do you build mobile apps?", a: "Not yet. Zeroform focuses on Python repositories. If your mobile app needs a Python back‑end, that's within scope." },
+            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl">
               {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -138,8 +139,8 @@ export default function HomePage() {
 
       {/* CONTACT */}
       <section id="contact" className="py-20 px-6 bg-gray-50">
-        <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
-        <p className="text-center mb-8">Fill out the form below and I’ll respond within 24 hours.</p>
+        <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
+        <p className="text-center mb-8">Fill out the form below and I'll respond within 24 hours.</p>
         <div className="max-w-3xl mx-auto">
           <iframe
             src="https://docs.google.com/forms/d/e/your-form-url/viewform?embedded=true"
