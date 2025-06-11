@@ -9,13 +9,13 @@ export default function HomePage() {
           Fully Automated APIs — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="max-w-2xl text-lg sm:text-xl mb-8">
-          Professional-grade Flask APIs with Auth, CRUD endpoints, Tests, and Documentation. Fast, reliable, affordable—built entirely by my AI.
+          Professional-grade Flask APIs with Auth, CRUD endpoints, Tests, and Documentation. Fast, reliable, affordable&mdash;built entirely by my AI.
         </p>
         <a
           href="#contact"
           className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 transition"
         >
-          Request Your API →
+          Request Your API &rarr;
         </a>
       </section>
 
@@ -26,7 +26,7 @@ export default function HomePage() {
           {[
             "Share your project requirements.",
             "My AI instantly plans, generates, and tests your code.",
-            "Receive a production-ready backend within 48–72 hours."
+            "Receive a production-ready backend within 48&ndash;72 hours."
           ].map((step, index) => (
             <div key={index} className="flex items-start">
               <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
@@ -56,7 +56,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
           >
-            View Source Code →
+            View Source Code &rarr;
           </a>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-center mb-10">Pricing</h2>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
-            { title: "Launch", icon: "🚀", desc: "Auth, CRUD, SQLite, Docs, Tests", delivery: "24–48 hrs", price: "€350" },
+            { title: "Launch", icon: "🚀", desc: "Auth, CRUD, SQLite, Docs, Tests", delivery: "24&ndash;48 hrs", price: "€350" },
             { title: "Grow", icon: "🌱", desc: "Launch + Admin CLI + more endpoints", delivery: "~72 hrs", price: "€750" },
             { title: "Custom", icon: "⚙️", desc: "Complex integrations & tailored systems", delivery: "~1 week", price: "Custom Quote" }
           ].map((tier) => (
@@ -92,7 +92,7 @@ export default function HomePage() {
       <section id="about" className="py-20 px-6 bg-gray-50">
         <h2 className="text-3xl font-semibold text-center mb-10">Meet the Creator</h2>
         <p className="max-w-3xl mx-auto text-lg text-center">
-          I'm a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I'm redefining software development speed and quality.
+          I&apos;m a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I&apos;m redefining software development speed and quality.
         </p>
       </section>
 
@@ -101,9 +101,9 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
-            { q: "How is your AI so fast?", a: "It's fully autonomous, instantly generating and validating code." },
-            { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment-ready." },
-            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
+            { q: "How is your AI so fast?", a: "It&apos;s fully autonomous, instantly generating and validating code." },
+            { q: "Can I review the code?", a: "Absolutely&mdash;full transparency, documented, tested, and deployment-ready." },
+            { q: "Do I pay upfront?", a: "No&mdash;pay only after you&apos;ve reviewed and approved your project." }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl">
               <summary className="font-medium cursor-pointer select-none">{q}</summary>
