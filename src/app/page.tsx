@@ -6,19 +6,19 @@ export default function HomePage() {
       {/* HERO */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white to-gray-100">
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated APIs — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
+          Fully Automated MVPs — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 mb-4">
           Zeroform - Generating the future
         </p>
         <p className="max-w-2xl text-lg sm:text-xl mb-8">
-          Professional-grade Flask APIs with Auth, CRUD endpoints, Tests, and Documentation. Fast, reliable, affordable—built entirely by my AI.
+          Professional-grade MVPs including backends, APIs, tools, and more — Auth, CRUD endpoints, Tests, and Documentation. Fast, reliable, affordable—built entirely by my AI.
         </p>
         <a
           href="#contact"
           className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 transition"
         >
-          Request Your API →
+          Request Your MVP →
         </a>
       </section>
 
@@ -26,7 +26,11 @@ export default function HomePage() {
       <section id="how" className="py-20 px-6 bg-white">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
         <div className="max-w-3xl mx-auto space-y-4 text-lg">
-          {["Share your project requirements.", "My AI instantly plans, generates, and tests your code.", "Receive a production-ready backend within 48–72 hours."].map((step, index) => (
+          {[
+            "Share your project requirements.",
+            "My AI instantly plans, generates, and tests your code.",
+            "Receive a production-ready backend within 48–72 hours."
+          ].map((step, index) => (
             <div key={index} className="flex items-start">
               <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
                 {index + 1}
@@ -87,7 +91,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ABOUT */}
+      <section id="about" className="py-20 px-6 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-10">Meet the Creator</h2>
+        <p className="max-w-3xl mx-auto text-lg text-center">
+          I'm a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I'm redefining software development speed and quality.
+        </p>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-6 bg-white">
+        <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {[
+            { q: "How is the process so fast?", a: "It's fully autonomous, instantly generating and validating code." },
+            { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment-ready." },
+            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
+          ].map(({ q, a }, i) => (
+            <details key={i} className="p-4 border rounded-xl">
+              <summary className="font-medium cursor-pointer select-none">{q}</summary>
+              <p className="mt-2 text-sm leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 px-6 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-10">Get Your Project Started</h2>
+        <iframe
+          src="https://docs.google.com/forms/d/e/your-form-url/viewform?embedded=true"
+          height="800"
+          className="w-full max-w-3xl mx-auto border rounded-xl bg-white shadow-lg"
+          loading="lazy"
+          title="Intake Form"
+        />
+      </section>
+
       <footer className="py-6 text-center text-sm text-gray-500 bg-white">
         © {new Date().getFullYear()} ZeroFormAI — All Rights Reserved.
       </footer>
