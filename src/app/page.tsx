@@ -95,7 +95,7 @@ export default function HomePage() {
       <section id="about" className="py-20 px-6 bg-gray-50">
         <h2 className="text-3xl font-semibold text-center mb-10">Meet the Creator</h2>
         <p className="max-w-3xl mx-auto text-lg text-center">
-          I'm a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I'm redefining software development speed and quality.
+          I&apos;m a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I&apos;m redefining software development speed and quality.
         </p>
       </section>
 
@@ -104,9 +104,9 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
-            { q: "How is the process so fast?", a: "It's fully autonomous, instantly generating and validating code." },
+            { q: "How is the process so fast?", a: "It&apos;s fully autonomous, instantly generating and validating code." },
             { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment-ready." },
-            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
+            { q: "Do I pay upfront?", a: "No—pay only after you&apos;ve reviewed and approved your project." }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl">
               <summary className="font-medium cursor-pointer select-none">{q}</summary>
