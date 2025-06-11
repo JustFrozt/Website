@@ -1,103 +1,134 @@
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="font-sans text-gray-900 bg-white">
+      {/* HERO */}
+      <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white to-gray-100">
+        <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
+          Fully Automated APIs — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
+        </h1>
+        <p className="max-w-2xl text-lg sm:text-xl mb-8">
+          Professional-grade Flask APIs with Auth, CRUD endpoints, Tests, and Documentation. Fast, reliable, affordable—built entirely by my AI.
+        </p>
+        <a
+          href="#contact"
+          className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 transition"
+        >
+          Request Your API →
+        </a>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* HOW IT WORKS */}
+      <section id="how" className="py-20 px-6 bg-white">
+        <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
+        <div className="max-w-3xl mx-auto space-y-4 text-lg">
+          {[
+            "Share your project requirements.",
+            "My AI instantly plans, generates, and tests your code.",
+            "Receive a production-ready backend within 48–72 hours."
+          ].map((step, index) => (
+            <div key={index} className="flex items-start">
+              <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
+                {index + 1}
+              </div>
+              <p>{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DEMO */}
+      <section id="demo" className="py-20 px-6 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-10">Watch the Demo</h2>
+        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl">
+          <iframe
+            className="w-full aspect-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+            title="API Demo Video"
+            allowFullScreen
+          />
+        </div>
+        <div className="text-center mt-6">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/your-github-handle/demo-repo"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            View Source Code →
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-20 px-6 bg-white">
+        <h2 className="text-3xl font-semibold text-center mb-10">Pricing</h2>
+        <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
+          {[
+            { title: "Launch", icon: "🚀", desc: "Auth, CRUD, SQLite, Docs, Tests", delivery: "24–48 hrs", price: "€350" },
+            { title: "Grow", icon: "🌱", desc: "Launch + Admin CLI + more endpoints", delivery: "~72 hrs", price: "€750" },
+            { title: "Custom", icon: "⚙️", desc: "Complex integrations & tailored systems", delivery: "~1 week", price: "Custom Quote" }
+          ].map((tier) => (
+            <div key={tier.title} className="border rounded-xl p-6 flex flex-col shadow-lg">
+              <h3 className="text-xl font-bold mb-2">
+                <span className="mr-2">{tier.icon}</span>{tier.title}
+              </h3>
+              <p className="flex-grow text-sm mb-4">{tier.desc}</p>
+              <p className="text-sm mb-2"><strong>Delivery:</strong> {tier.delivery}</p>
+              <p className="text-2xl font-semibold mb-6">{tier.price}</p>
+              <a
+                href="#contact"
+                className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition text-center"
+              >
+                Request {tier.title}
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 px-6 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-10">Meet the Creator</h2>
+        <p className="max-w-3xl mx-auto text-lg text-center">
+          I'm a 20-year-old innovator who built an autonomous AI capable of creating robust, secure APIs. With <span className="text-indigo-600">Zero</span> formal coding education, I'm redefining software development speed and quality.
+        </p>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-6 bg-white">
+        <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {[
+            { q: "How is your AI so fast?", a: "It's fully autonomous, instantly generating and validating code." },
+            { q: "Can I review the code?", a: "Absolutely—full transparency, documented, tested, and deployment-ready." },
+            { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
+          ].map(({ q, a }, i) => (
+            <details key={i} className="p-4 border rounded-xl">
+              <summary className="font-medium cursor-pointer select-none">{q}</summary>
+              <p className="mt-2 text-sm leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 px-6 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-10">Get Your Project Started</h2>
+        <iframe
+          src="https://docs.google.com/forms/d/e/your-form-url/viewform?embedded=true"
+          height="800"
+          className="w-full max-w-3xl mx-auto border rounded-xl bg-white shadow-lg"
+          loading="lazy"
+          title="Intake Form"
+        />
+      </section>
+
+      <footer className="py-6 text-center text-sm text-gray-500 bg-white">
+        © {new Date().getFullYear()} ZeroFormAI — All Rights Reserved.
       </footer>
-    </div>
+    </main>
   );
 }
+
