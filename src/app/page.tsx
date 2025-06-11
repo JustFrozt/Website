@@ -62,12 +62,12 @@ export default function HomePage() {
         </div>
         <div className="text-center mt-6">
           <a
-            href="https://github.com/your-github-handle/demo-repo"
+            href="https://github.com/JustFrozt/ZeroForm-Showcase"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
           >
-            View Source Code →
+            View ZeroForm Showcase →
           </a>
         </div>
       </section>
@@ -118,6 +118,15 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
+
+      {/* PAYMENTS */}
+      <section id="payments" className="py-16 px-6 bg-gray-50">
+        <h2 className="text-2xl font-semibold text-center mb-6">Payments &amp; Invoicing</h2>
+        <p className="max-w-4xl mx-auto text-sm sm:text-base text-center text-gray-700">
+          All transactions are handled through <strong>Frilans&nbsp;Finans</strong>, Sweden&#39;s leading umbrella company for freelancers. After we agree on your project scope and price you&#39;ll receive an official Frilans&nbsp;Finans invoice and can pay via card, Swish, or bank transfer&mdash;whichever suits you best. You get a standard business receipt, and I stay focused on delivering quality code.
+        </p>
+      </section>
+
       <section id="faq" className="py-20 px-6 bg-white">
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
@@ -128,9 +137,7 @@ export default function HomePage() {
             { q: "Do I pay upfront?", a: "No—pay only after you've reviewed and approved your project." }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl">
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <summary className="font-medium cursor-pointer select-none">{q}</summary>
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <p className="mt-2 text-sm leading-relaxed">{a}</p>
             </details>
           ))}
@@ -140,6 +147,7 @@ export default function HomePage() {
       {/* CONTACT */}
       <section id="contact" className="py-20 px-6 bg-gray-50">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <p className="text-center mb-8">Fill out the form below and I'll respond within 24 hours.</p>
         <div className="max-w-3xl mx-auto">
           <iframe
