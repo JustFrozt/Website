@@ -25,20 +25,20 @@ export default function HomePage() {
       {/* HOW IT WORKS */}
       <section id="how" className="py-20 px-6 bg-white">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
-        <div className="max-w-3xl mx-auto space-y-4 text-lg">
+        <ol className="flex flex-col sm:flex-row justify-center items-center gap-12 max-w-4xl mx-auto">
           {[
             "Share your project requirements.",
             "My AI plans, writes, and tests 100% of the Python code in a fresh repo.",
             "Receive a production‑ready MVP within 48–72 hours."
           ].map((step, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mr-3 h-8 w-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
+            <li key={index} className="flex flex-col items-center text-center flex-1 min-w-[200px]">
+              <div className="h-12 w-12 mb-4 flex items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold shadow-lg">
                 {index + 1}
               </div>
-              <p>{step}</p>
-            </div>
+              <p className="text-base sm:text-lg">{step}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       {/* TECHNOLOGY & SCOPE */}
@@ -123,7 +123,7 @@ export default function HomePage() {
       <section id="payments" className="py-16 px-6 bg-gray-50">
         <h2 className="text-2xl font-semibold text-center mb-6">Payments &amp; Invoicing</h2>
         <p className="max-w-4xl mx-auto text-sm sm:text-base text-center text-gray-700">
-          All transactions are handled through <strong>Frilans&nbsp;Finans</strong>, Sweden&#39;s leading umbrella company for freelancers. After we agree on your project scope and price you&#39;ll receive an official Frilans&nbsp;Finans invoice and can pay via card, Swish, or bank transfer&mdash;whichever suits you best. You get a standard business receipt, and I stay focused on delivering quality code.
+          All transactions are handled through <strong>Frilans&nbsp;Finans</strong>, Sweden&#39;s leading umbrella company for freelancers. After we agree on your project scope and price you&#39;ll receive an official Frilans&nbsp;Finans invoice and can pay via card, Swish, or bank transfer, whichever suits you best. You get a standard business receipt, and I stay focused on delivering quality code.
         </p>
       </section>
 
@@ -151,8 +151,8 @@ export default function HomePage() {
         <p className="text-center mb-8">Fill out the form below and I'll respond within 24 hours.</p>
         <div className="max-w-3xl mx-auto">
           <iframe
-            src="https://docs.google.com/forms/d/e/your-form-url/viewform?embedded=true"
-            height="800"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc2EP837Wvzq33mHh_CdI0pEsk9c8gBvJMNUbJZY97Xr5Gh4A/viewform?embedded=true"
+            height="900"
             className="w-full border rounded-xl bg-white shadow-lg"
             loading="lazy"
             title="Intake Form"
