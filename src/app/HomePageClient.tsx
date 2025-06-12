@@ -83,7 +83,7 @@ export default function HomePageClient() {
         className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> — Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
+          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> - Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
           Your personal AI back‑end engineer, on demand.
