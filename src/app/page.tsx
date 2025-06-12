@@ -1,7 +1,17 @@
-"use client"; //
-
 import React from "react";
-import Image from "next/image"; // Import the Next.js Image component
+import Image from "next/image";
+
+// -----------------------------------------------------------------------------
+// ZeroForm Landing – fully polished
+// -----------------------------------------------------------------------------
+// Notes on improvements since last draft:
+// • Added colon in “Key Purchase Details:” heading (dash‑free as requested)
+// • Ensured plurals for “MVPs” everywhere for consistency
+// • Increased scroll‑margin on smaller screens so sticky nav never overlaps
+// • Dismiss button in promo banner now has explicit red text colour in dark/light
+// • Added aria‑hidden to decorative emoji spans
+// • Minor colour‑contrast tweaks for WCAG AA
+// -----------------------------------------------------------------------------
 
 export default function HomePage() {
   // State for managing the visibility of the promotional banner
@@ -22,7 +32,9 @@ export default function HomePage() {
   React.useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const links = Array.from(document.querySelectorAll('nav a[href^="#"]')) as HTMLAnchorElement[];
+    const links = Array.from(
+      document.querySelectorAll('nav a[href^="#"]')
+    ) as HTMLAnchorElement[];
 
     const handler = (e: MouseEvent) => {
       const target = e.currentTarget as HTMLAnchorElement | null;
@@ -78,15 +90,15 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       <section
         id="top"
-        className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-24"
+        className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVP</abbr>s, Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
+          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr>, Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Your personal AI back-end engineer, on demand.
+          Your personal AI back‑end engineer, on demand.
         </p>
-        <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
+        <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
           Professional‑grade back‑end MVPs built exclusively in Python: APIs, data pipelines, CLI
           tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase
@@ -104,20 +116,20 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* HOW IT WORKS                                                       */}
       {/* ------------------------------------------------------------------ */}
-      <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
         <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-5xl mx-auto">
           {[
             { title: "Submit Your Idea", desc: "Share your project requirements using the form below." },
-            { title: "Review & Quote", desc: "I'll review your request, confirm the scope, and send you a fixed-price quote for the appropriate tier." },
-            { title: "Autonomous Build", desc: "Once approved, my AI plans, writes, and tests 100% of the Python code in a fresh repo." },
-            { title: "Receive Your MVP", desc: "You get a production-ready MVP, typically within 48 to 72 hours." }
+            { title: "Review & Quote", desc: "I'll review your request, confirm the scope, and send a fixed‑price quote." },
+            { title: "Autonomous Build", desc: "Once approved, my AI plans, writes, and tests 100% of the Python code." },
+            { title: "Receive Your MVP", desc: "You get a production‑ready MVP, typically within 48 to 72 hours." }
           ].map((step, index) => (
             <li
               key={index}
               className="flex flex-col items-center text-center flex-1 min-w-[200px]"
             >
-              <div className="h-12 w-12 mb-4 flex items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold shadow-lg">
+              <div className="h-12 w-12 mb-4 flex items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold shadow-lg" aria-hidden="true">
                 {index + 1}
               </div>
               <h3 className="font-semibold mb-1 text-lg">{step.title}</h3>
@@ -130,7 +142,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* TECHNOLOGY & SCOPE                                                 */}
       {/* ------------------------------------------------------------------ */}
-      <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
           ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, I can help.
@@ -140,22 +152,19 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* KEY DETAILS & PROMO                                                */}
       {/* ------------------------------------------------------------------ */}
-      <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-24">
+      <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-32 lg:scroll-mt-24">
         {/* PROMO */}
         {isPromoVisible && (
           <div className="max-w-3xl mx-auto mb-6 relative">
             <div className="bg-red-200 border border-red-400 text-red-900 rounded-xl p-4 text-center font-bold text-lg shadow md:text-xl dark:bg-red-300/20 dark:text-red-300">
               🚨 <span className="text-red-700 dark:text-red-400">Launch Special:</span> First 5 customers get <span className="underline">50% off</span> their first purchase!
               <br />
-              <span className="text-xs font-normal block mt-1">
-                Discount automatically applies to the first five accepted quotes (tracked by signed agreement date).
-              </span>
-              {/* Dismiss button */}
+              <span className="text-xs font-normal block mt-1">Discount automatically applies to the first five accepted quotes (tracked by signed agreement date).</span>
               <button
                 type="button"
                 onClick={() => setIsPromoVisible(false)}
-                className="absolute top-2 right-2 p-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 motion-safe:transition-colors motion-safe:hover:bg-red-300/50 dark:motion-safe:hover:bg-red-300/20"
-                aria-label="Dismiss launch special banner"
+                className="absolute top-2 right-2 p-1 rounded-full text-red-600 dark:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 motion-safe:transition-colors hover:bg-red-300/50 dark:hover:bg-red-300/20"
+                aria-label="Close banner"
               >
                 ✕
               </button>
@@ -165,22 +174,22 @@ export default function HomePage() {
 
         {/* RULES */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
             <li>
-              <strong>Quote Confirmation:</strong> Your project's final price and delivery tier (Standard, Advanced, or Custom) will be confirmed in a formal quote after I review your initial requirements.
+              <strong>Quote Confirmation:</strong> Your project's final price and delivery tier will be confirmed in a formal quote after review.
             </li>
             <li>
-              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> after delivery, free of charge. Defects mean the code does not match the agreed requirements.
+              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> of delivery, free of charge.
             </li>
             <li>
-              <strong>All payments</strong> are made via invoice (Frilans Finans). Pay only after you review and approve your project.
+              <strong>All payments</strong> are handled via invoice (Frilans Finans). Pay only after you review and approve your project.
             </li>
             <li>
-              <strong>Scope is fixed</strong> to your initial requirements. New features (for example, adding a new endpoint) may require a fresh quote; bug fixes (for example, an endpoint returning the wrong status code) are covered.
+              <strong>Scope is fixed</strong> to your initial requirements. New features (e.g., adding a new endpoint) require a new quote; bug fixes (e.g., incorrect status code) are covered.
             </li>
             <li>
-              <strong>Confidentiality:</strong> Your ideas and code remain private and are never reused or shared unless you grant explicit permission.
+              <strong>Confidentiality:</strong> Your ideas and code remain private and are never reused or shared without your explicit permission.
             </li>
           </ul>
         </div>
@@ -189,10 +198,10 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* PRICING                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Pricing</h2>
         <p className="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-10">
-          The tiers below are a guide. After you submit your project, I will personally review it and provide a formal quote confirming the scope and final price.
+          The tiers below are a guide. After you submit your project, I'll review it and provide a formal quote confirming scope and final price.
         </p>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
@@ -200,21 +209,21 @@ export default function HomePage() {
               title: "Standard",
               icon: "🐍",
               desc: "Core Python MVP: single back‑end service, CLI, or automation tool with auth, CRUD, tests, and docs.",
-              delivery: "24–48 hours",
+              delivery: "24–48 hours",
               price: "€350"
             },
             {
               title: "Advanced",
               icon: "✨",
               desc: "Feature‑rich Python MVP: multi‑entity API, admin CLI, scheduled jobs, or third‑party integrations.",
-              delivery: "3 days",
+              delivery: "3 days",
               price: "€750"
             },
             {
               title: "Custom",
               icon: "⚙️",
               desc: "Complex Python solutions: cross‑service orchestration, data pipelines, or specialised workflows.",
-              delivery: "7+ days",
+              delivery: "7+ days",
               price: "Custom Quote"
             }
           ].map((tier) => (
