@@ -1,6 +1,7 @@
 "use client"; //
 
 import React from "react";
+import Image from "next/image"; // Import the Next.js Image component
 
 export default function HomePage() {
   // State for managing the visibility of the promotional banner
@@ -262,10 +263,12 @@ export default function HomePage() {
             Swagger docs, all written autonomously.
           </p>
           {/* GitHub CI badge */}
-          <img
+          <Image
             src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
             alt="GitHub CI badge indicating build status"
             className="mb-4"
+            width={148}
+            height={20}
           />
           <a
             href="https://github.com/JustFrozt/ZeroForm-Showcase"
