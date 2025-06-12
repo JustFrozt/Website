@@ -330,7 +330,7 @@ export default function HomePageClient() {
       <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
-          Ready to start? Fill out the form with your project details. I'll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
+          Ready to start? Fill out the form with your project details. I’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
         <div className="max-w-3xl mx-auto">
           <iframe
