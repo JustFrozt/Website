@@ -60,7 +60,7 @@ export default function HomePageClient() {
               { href: "#pricing", label: "Pricing" },
               { href: "#details", label: "Key Details" },
               { href: "#faq", label: "FAQ" },
-              { href: "#contact", label: "Contact" }
+              { href: "#email-contact", label: "Contact" }
             ].map(({ href, label }) => (
               <li key={href}>
                 <a
@@ -111,8 +111,8 @@ export default function HomePageClient() {
         <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-5xl mx-auto">
           {[
             { title: "Submit Your Idea", desc: "Share your project requirements using the form below." },
-            { title: "Review & Quote", desc: "I’ll review your request, confirm the scope, and send a fixed‑price quote." },
-            { title: "Autonomous Build", desc: "Once approved, my AI plans, writes, and tests 100% of the Python code." },
+            { title: "Review & Quote", desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote." },
+            { title: "Autonomous Build", desc: "Once approved, our AI plans, writes, and tests 100% of the Python code." },
             { title: "Receive Your MVP", desc: "You get a production‑ready MVP, typically within 48 to 72 hours." }
           ].map((step, index) => (
             <li
@@ -135,7 +135,7 @@ export default function HomePageClient() {
       <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
-          ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, I can help.
+          ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, we can help.
         </p>
       </section>
       
@@ -145,7 +145,7 @@ export default function HomePageClient() {
       <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Pricing</h2>
         <p className="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-10">
-          The tiers below are a guide. After you submit your project, I’ll review it and provide a formal quote confirming scope and final price.
+          The tiers below are a guide. After you submit your project, we’ll review it and provide a formal quote confirming scope and final price.
         </p>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
@@ -307,7 +307,7 @@ export default function HomePageClient() {
             },
             {
               q: "Do you build mobile apps?",
-              a: "Soon. For now, I focus on Python back‑ends. If your mobile app needs one, I can help."
+              a: "Soon. For now, we focus on Python back‑ends. If your mobile app needs one, we can help."
             },
             {
               q: "Do I pay upfront?",
@@ -327,7 +327,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* EMAIL CONTACT (NEW SECTION)                                        */}
       {/* ------------------------------------------------------------------ */}
-      <section className="pt-24 py-20 px-6 bg-white dark:bg-gray-900">
+      <section id="email-contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Have a Quick Question?</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           If you prefer to send a direct email for general inquiries, feel free to reach out. For official project submissions, please use the form below.
@@ -348,7 +348,7 @@ export default function HomePageClient() {
       <section id="contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
-          Ready to start? Fill out the form with your project details. I’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
+          Ready to start? Fill out the form with your project details. We’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
         <div className="max-w-3xl mx-auto">
           <iframe
