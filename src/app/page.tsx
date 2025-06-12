@@ -54,7 +54,7 @@ export default function HomePage() {
           <ul className="hidden sm:flex gap-6 text-sm font-medium">
             {[
               { href: "#how", label: "How It Works" },
-              { href: "#tldr", label: "TL;DR" },
+              { href: "#details", label: "Key Details" },
               { href: "#pricing", label: "Pricing" },
               { href: "#faq", label: "FAQ" },
               { href: "#contact", label: "Contact" }
@@ -83,7 +83,7 @@ export default function HomePage() {
           Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVP</abbr>s, Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
-          ZeroForm – Generating the future
+          Your personal AI back-end engineer, on demand.
         </p>
         <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
@@ -105,11 +105,12 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
-        <ol className="flex flex-col sm:flex-row justify-center items-center gap-12 max-w-4xl mx-auto">
+        <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-5xl mx-auto">
           {[
-            "Share your project requirements.",
-            "My AI plans, writes, and tests 100% of the Python code in a fresh repo.",
-            "Receive a production‑ready MVP within 48 to 72 hours."
+            { title: "Submit Your Idea", desc: "Share your project requirements using the form below." },
+            { title: "Review & Quote", desc: "I'll review your request, confirm the scope, and send you a fixed-price quote for the appropriate tier." },
+            { title: "Autonomous Build", desc: "Once approved, my AI plans, writes, and tests 100% of the Python code in a fresh repo." },
+            { title: "Receive Your MVP", desc: "You get a production-ready MVP, typically within 48 to 72 hours." }
           ].map((step, index) => (
             <li
               key={index}
@@ -118,7 +119,8 @@ export default function HomePage() {
               <div className="h-12 w-12 mb-4 flex items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold shadow-lg">
                 {index + 1}
               </div>
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">{step}</p>
+              <h3 className="font-semibold mb-1 text-lg">{step.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300">{step.desc}</p>
             </li>
           ))}
         </ol>
@@ -130,14 +132,14 @@ export default function HomePage() {
       <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
-          ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, we‘re in.
+          ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, I can help.
         </p>
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* TLDR / Rules & Promo                                               */}
+      {/* KEY DETAILS & PROMO                                                */}
       {/* ------------------------------------------------------------------ */}
-      <section id="tldr" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-24">
+      <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-24">
         {/* PROMO */}
         {isPromoVisible && (
           <div className="max-w-3xl mx-auto mb-6 relative">
@@ -162,10 +164,13 @@ export default function HomePage() {
 
         {/* RULES */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold text-center mb-4">TL;DR: Key Purchase Rules</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details</h2>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
             <li>
-              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 7 business days</span> after delivery, free of charge. Defects mean the code does not match the agreed requirements.
+              <strong>Quote Confirmation:</strong> Your project's final price and delivery tier (Standard, Advanced, or Custom) will be confirmed in a formal quote after I review your initial requirements.
+            </li>
+            <li>
+              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> after delivery, free of charge. Defects mean the code does not match the agreed requirements.
             </li>
             <li>
               <strong>All payments</strong> are made via invoice (Frilans Finans). Pay only after you review and approve your project.
@@ -184,28 +189,31 @@ export default function HomePage() {
       {/* PRICING                                                            */}
       {/* ------------------------------------------------------------------ */}
       <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
-        <h2 className="text-3xl font-semibold text-center mb-10">Pricing</h2>
+        <h2 className="text-3xl font-semibold text-center mb-4">Pricing</h2>
+        <p className="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-10">
+          The tiers below are a guide. After you submit your project, I will personally review it and provide a formal quote confirming the scope and final price.
+        </p>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
             {
               title: "Standard",
               icon: "🐍",
               desc: "Core Python MVP: single back‑end service, CLI, or automation tool with auth, CRUD, tests, and docs.",
-              delivery: "48–72 hrs",
+              delivery: "24–48 hours",
               price: "€350"
             },
             {
               title: "Advanced",
               icon: "✨",
               desc: "Feature‑rich Python MVP: multi‑entity API, admin CLI, scheduled jobs, or third‑party integrations.",
-              delivery: "72–96 hrs",
+              delivery: "3 days",
               price: "€750"
             },
             {
               title: "Custom",
               icon: "⚙️",
               desc: "Complex Python solutions: cross‑service orchestration, data pipelines, or specialised workflows.",
-              delivery: "5–7 days",
+              delivery: "7+ days",
               price: "Custom Quote"
             }
           ].map((tier) => (
@@ -230,7 +238,7 @@ export default function HomePage() {
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
                 aria-labelledby={`tier-${tier.title.toLowerCase()}`}
               >
-                Request {tier.title}
+                Request a Quote →
               </button>
             </article>
           ))}
@@ -297,7 +305,7 @@ export default function HomePage() {
             },
             {
               q: "Do you build mobile apps?",
-              a: "Soon. For now, we focus on Python back‑ends. If your mobile app needs one, we can help."
+              a: "Soon. For now, I focus on Python back‑ends. If your mobile app needs one, I can help."
             },
             {
               q: "Do I pay upfront?",
@@ -320,7 +328,7 @@ export default function HomePage() {
       <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200">
-          Fill out the form below and I’ll respond within 24 hours.
+          Ready to start? Fill out the form with your project details. I'll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
         <div className="max-w-3xl mx-auto">
           <iframe
@@ -337,7 +345,8 @@ export default function HomePage() {
       {/* FOOTER                                                             */}
       {/* ------------------------------------------------------------------ */}
       <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
-        © {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.
+        <p>ZeroForm – Generating the future</p>
+        <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
       </footer>
     </main>
   );
