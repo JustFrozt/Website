@@ -177,7 +177,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
             <li>
-              <strong>Quote Confirmation:</strong> Your project's final price and delivery tier will be confirmed in a formal quote after review.
+              <strong>Quote Confirmation:</strong> Your project’s final price and delivery tier will be confirmed in a formal quote after review.
             </li>
             <li>
               <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> of delivery, free of charge.
