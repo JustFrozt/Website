@@ -1,61 +1,39 @@
-"use client";
-
+import { Metadata } from 'next';
 import React from "react";
 import Image from "next/image";
 
 // -----------------------------------------------------------------------------
-// ZeroForm Landing – fully polished
+// Meta & Open Graph Tags for SEO and Social Sharing
 // -----------------------------------------------------------------------------
-// Notes on improvements since last draft:
-// • Added colon in “Key Purchase Details:” heading (dash‑free as requested)
-// • Ensured plurals for “MVPs” everywhere for consistency
-// • Increased scroll‑margin on smaller screens so sticky nav never overlaps
-// • Dismiss button in promo banner now has explicit red text colour in dark/light
-// • Added aria‑hidden to decorative emoji spans
-// • Minor colour‑contrast tweaks for WCAG AA
-// -----------------------------------------------------------------------------
+export const metadata: Metadata = {
+  title: 'ZeroForm – AI-generated Python MVPs in 48 h',
+  description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+  openGraph: {
+    type: 'website',
+    url: 'https://zeroform.ai/',
+    title: 'ZeroForm – AI-generated Python MVPs in 48 h',
+    description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+    images: [
+      {
+        url: 'https://zeroform.ai/og-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'ZeroForm - AI-generated Python MVPs',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ZeroForm – AI-generated Python MVPs in 48 h',
+    description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+    images: ['https://zeroform.ai/og-cover.png'],
+  },
+  alternates: {
+    canonical: 'https://zeroform.ai/',
+  },
+};
 
 export default function HomePage() {
-  // State for managing the visibility of the promotional banner
-  const [isPromoVisible, setIsPromoVisible] = React.useState(true);
-
-  // Reusable scroll handler for buttons, respecting reduced motion
-  const handleScrollTo = (selector: string) => {
-    const el = document.querySelector(selector);
-    if (el) {
-      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth";
-      el.scrollIntoView({ behavior });
-    }
-  };
-
-  // Smooth scroll for NAV anchor links, respectful of reduced‑motion preference
-  React.useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const links = Array.from(
-      document.querySelectorAll('nav a[href^="#"]')
-    ) as HTMLAnchorElement[];
-
-    const handler = (e: MouseEvent) => {
-      const target = e.currentTarget as HTMLAnchorElement | null;
-      if (!target) return;
-
-      const href = target.getAttribute("href");
-      if (!href || href === "#" || href.length < 2) return;
-
-      const el = document.querySelector(href);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-
-    links.forEach((link) => link.addEventListener("click", handler));
-    return () => links.forEach((link) => link.removeEventListener("click", handler));
-  }, []);
-
   return (
     <main className="font-sans text-gray-900 bg-white scroll-smooth selection:bg-indigo-100 dark:bg-gray-900 dark:text-gray-100">
       {/* ------------------------------------------------------------------ */}
@@ -69,8 +47,8 @@ export default function HomePage() {
           <ul className="hidden sm:flex gap-6 text-sm font-medium">
             {[
               { href: "#how", label: "How It Works" },
-              { href: "#details", label: "Key Details" },
               { href: "#pricing", label: "Pricing" },
+              { href: "#details", label: "Key Details" },
               { href: "#faq", label: "FAQ" },
               { href: "#contact", label: "Contact" }
             ].map(({ href, label }) => (
@@ -106,13 +84,12 @@ export default function HomePage() {
           tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase
           generated, committed, and ready to deploy on Docker.
         </p>
-        <button
-          type="button"
-          onClick={() => handleScrollTo("#contact")}
+        <a
+          href="#contact"
           className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-200 dark:ring-offset-gray-900 transition"
         >
           Request Your MVP →
-        </button>
+        </a>
       </section>
 
       {/* ------------------------------------------------------------------ */}
@@ -149,52 +126,6 @@ export default function HomePage() {
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
           ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, I can help.
         </p>
-      </section>
-
-      {/* ------------------------------------------------------------------ */}
-      {/* KEY DETAILS & PROMO                                                */}
-      {/* ------------------------------------------------------------------ */}
-      <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-32 lg:scroll-mt-24">
-        {/* PROMO */}
-        {isPromoVisible && (
-          <div className="max-w-3xl mx-auto mb-6 relative">
-            <div className="bg-red-200 border border-red-400 text-red-900 rounded-xl p-4 text-center font-bold text-lg shadow md:text-xl dark:bg-red-300/20 dark:text-red-300">
-              🚨 <span className="text-red-700 dark:text-red-400">Launch Special:</span> First 5 customers get <span className="underline">50% off</span> their first purchase!
-              <br />
-              <span className="text-xs font-normal block mt-1">Discount automatically applies to the first five accepted quotes (tracked by signed agreement date).</span>
-              <button
-                type="button"
-                onClick={() => setIsPromoVisible(false)}
-                className="absolute top-2 right-2 p-1 rounded-full text-red-600 dark:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 motion-safe:transition-colors hover:bg-red-300/50 dark:hover:bg-red-300/20"
-                aria-label="Close banner"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* RULES */}
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
-            <li>
-              <strong>Quote Confirmation:</strong> Your project’s final price and delivery tier will be confirmed in a formal quote after review.
-            </li>
-            <li>
-              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> of delivery, free of charge.
-            </li>
-            <li>
-              <strong>All payments</strong> are handled via invoice (Frilans Finans). Pay only after you review and approve your project.
-            </li>
-            <li>
-              <strong>Scope is fixed</strong> to your initial requirements. New features (e.g., adding a new endpoint) require a new quote; bug fixes (e.g., incorrect status code) are covered.
-            </li>
-            <li>
-              <strong>Confidentiality:</strong> Your ideas and code remain private and are never reused or shared without your explicit permission.
-            </li>
-          </ul>
-        </div>
       </section>
 
       {/* ------------------------------------------------------------------ */}
@@ -244,16 +175,51 @@ export default function HomePage() {
                 <strong>Delivery:</strong> {tier.delivery}
               </p>
               <p className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">{tier.price}</p>
-              <button
-                type="button"
-                onClick={() => handleScrollTo("#contact")}
+              <a
+                href="#contact"
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
                 aria-labelledby={`tier-${tier.title.toLowerCase()}`}
               >
                 Request a Quote →
-              </button>
+              </a>
             </article>
           ))}
+        </div>
+      </section>
+      
+      {/* ------------------------------------------------------------------ */}
+      {/* KEY PURCHASE DETAILS & PROMO                                       */}
+      {/* ------------------------------------------------------------------ */}
+      <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-32 lg:scroll-mt-24">
+        {/* PROMO */}
+        <div className="max-w-3xl mx-auto mb-6 relative">
+          <div className="bg-red-200 border border-red-400 text-red-900 rounded-xl p-4 text-center font-bold text-lg shadow md:text-xl dark:bg-red-300/20 dark:text-red-300">
+            🚨 <span className="text-red-700 dark:text-red-400">Launch Special:</span> First 5 customers get <span className="underline">50% off</span> their first purchase!
+            <br />
+            <span className="text-xs font-normal block mt-1">Discount automatically applies to the first five accepted quotes (tracked by signed agreement date).</span>
+          </div>
+        </div>
+
+        {/* RULES */}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
+            <li>
+              <strong>Quote Confirmation:</strong> Your project’s final price and delivery tier will be confirmed in a formal quote after review.
+            </li>
+            <li>
+              <strong>Bugs or clear faults</strong> found in your delivered code will be fixed <span className="font-medium">within 5 business days</span> of delivery, free of charge.
+            </li>
+            <li>
+              <strong>All payments</strong> are handled via invoice (Frilans Finans). Pay only after you review and approve your project.
+            </li>
+            <li>
+              <strong>Scope is fixed</strong> to your initial requirements. New features (e.g., adding a new endpoint) require a new quote; bug fixes (e.g., incorrect status code) are covered.
+            </li>
+            <li>
+              <strong>Confidentiality:</strong> Your ideas and code remain private and are never reused or shared without your explicit permission.
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -341,17 +307,16 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
-        <p className="text-center mb-8 text-gray-800 dark:text-gray-200">
-          Ready to start? Fill out the form with your project details. I’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
+        <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
+          Ready to start? Send an email with your project details. I’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
-        <div className="max-w-3xl mx-auto">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc2EP837Wvzq33mHh_CdI0pEsk9c8gBvJMNUbJZY97Xr5Gh4A/viewform?embedded=true&hl=en"
-            title="Project Intake Form"
-            loading="lazy"
-            className="w-full min-h-[900px] border rounded-xl bg-white shadow-lg dark:bg-gray-800"
-            aria-label="Project Intake Form"
-          />
+        <div className="text-center">
+          <a
+            href="mailto:teamzeroform@gmail.com"
+            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-white dark:ring-offset-gray-900 transition"
+          >
+            Email Your Project Details →
+          </a>
         </div>
       </section>
 
