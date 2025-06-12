@@ -325,9 +325,27 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* CONTACT                                                            */}
+      {/* EMAIL CONTACT (NEW SECTION)                                        */}
       {/* ------------------------------------------------------------------ */}
-      <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section className="pt-24 py-20 px-6 bg-white dark:bg-gray-900">
+        <h2 className="text-3xl font-semibold text-center mb-4">Have a Quick Question?</h2>
+        <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
+          If you prefer to send a direct email for general inquiries, feel free to reach out. For official project submissions, please use the form below.
+        </p>
+        <div className="text-center">
+          <a
+            href="mailto:teamzeroform@gmail.com"
+            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-white dark:ring-offset-gray-900 transition"
+          >
+            Email Us Directly →
+          </a>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* CONTACT (GOOGLE FORM)                                              */}
+      {/* ------------------------------------------------------------------ */}
+      <section id="contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           Ready to start? Fill out the form with your project details. I’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
