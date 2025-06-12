@@ -121,7 +121,7 @@ export default function HomePage() {
         <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-5xl mx-auto">
           {[
             { title: "Submit Your Idea", desc: "Share your project requirements using the form below." },
-            { title: "Review & Quote", desc: "I'll review your request, confirm the scope, and send a fixed‑price quote." },
+            { title: "Review & Quote", desc: "I&rsquo;ll review your request, confirm the scope, and send a fixed‑price quote." },
             { title: "Autonomous Build", desc: "Once approved, my AI plans, writes, and tests 100% of the Python code." },
             { title: "Receive Your MVP", desc: "You get a production‑ready MVP, typically within 48 to 72 hours." }
           ].map((step, index) => (
@@ -201,7 +201,7 @@ export default function HomePage() {
       <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Pricing</h2>
         <p className="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-10">
-          The tiers below are a guide. After you submit your project, I'll review it and provide a formal quote confirming scope and final price.
+          The tiers below are a guide. After you submit your project, I&rsquo;ll review it and provide a formal quote confirming scope and final price.
         </p>
         <div className="max-w-5xl mx-auto grid gap-8 sm:grid-cols-3">
           {[
