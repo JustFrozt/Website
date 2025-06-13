@@ -196,7 +196,7 @@ export default function HomePageClient() {
               </h3>
 
               {/* Description */}
-              <p className="flex-grow text-sm mb-4 text-gray-700 dark:text-gray-300">
+              <p className="text-sm mb-4 text-gray-700 dark:text-gray-300">
                 {tier.desc}
               </p>
 
