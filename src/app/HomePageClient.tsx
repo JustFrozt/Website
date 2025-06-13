@@ -4,9 +4,6 @@ import React from "react";
 import Image from "next/image";
 
 export default function HomePageClient() {
-  // State for managing the visibility of the promotional banner
-  const [isPromoVisible, setIsPromoVisible] = React.useState(true);
-
   // Reusable scroll handler for buttons, respecting reduced motion
   const handleScrollTo = (selector: string) => {
     const el = document.querySelector(selector);
@@ -154,14 +151,14 @@ export default function HomePageClient() {
               icon: "🐍",
               desc: "Core Python MVP: single back‑end service, CLI, or automation tool with auth, CRUD, tests, and docs.",
               delivery: "24–48 hours",
-              price: "€350"
+              price: "€80"
             },
             {
               title: "Advanced",
               icon: "✨",
               desc: "Feature‑rich Python MVP: multi‑entity API, admin CLI, scheduled jobs, or third‑party integrations.",
-              delivery: "3 days",
-              price: "€750"
+              delivery: "3-4 days",
+              price: "€150"
             },
             {
               title: "Custom",
@@ -200,28 +197,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* KEY PURCHASE DETAILS & PROMO                                       */}
+      {/* KEY PURCHASE DETAILS                                               */}
       {/* ------------------------------------------------------------------ */}
       <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-32 lg:scroll-mt-24">
-        {/* PROMO */}
-        {isPromoVisible && (
-          <div className="max-w-3xl mx-auto mb-6 relative">
-            <div className="bg-red-200 border border-red-400 text-red-900 rounded-xl p-4 text-center font-bold text-lg shadow md:text-xl dark:bg-red-300/20 dark:text-red-300">
-              🚨 <span className="text-red-700 dark:text-red-400">Launch Special:</span> First 5 customers get <span className="underline">50% off</span> their first purchase!
-              <br />
-              <span className="text-xs font-normal block mt-1">Discount automatically applies to the first five accepted quotes (tracked by signed agreement date).</span>
-              <button
-                type="button"
-                onClick={() => setIsPromoVisible(false)}
-                className="absolute top-2 right-2 p-1 rounded-full text-red-600 dark:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 motion-safe:transition-colors hover:bg-red-300/50 dark:hover:bg-red-300/20"
-                aria-label="Close banner"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* RULES */}
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
