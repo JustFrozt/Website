@@ -150,46 +150,76 @@ export default function HomePageClient() {
               title: "Standard",
               icon: "🐍",
               desc: "Core Python MVP: single back‑end service, CLI, or automation tool with auth, CRUD, tests, and docs.",
-              delivery: "24–48 hours",
-              price: "€80"
+              delivery: "24–48\u00a0hours",
+              price: "€79",
+              early: true,
             },
             {
               title: "Advanced",
               icon: "✨",
               desc: "Feature‑rich Python MVP: multi‑entity API, admin CLI, scheduled jobs, or third‑party integrations.",
-              delivery: "3-4 days",
-              price: "€150"
+              delivery: "3–4\u00a0days",
+              price: "€149",
+              early: true,
             },
             {
               title: "Custom",
               icon: "⚙️",
               desc: "Complex Python solutions: cross‑service orchestration, data pipelines, or specialised workflows.",
-              delivery: "7+ days",
-              price: "Custom Quote"
-            }
+              delivery: "7+\u00a0days",
+              price: "Custom Quote",
+              early: false,
+            },
           ].map((tier) => (
             <article
               key={tier.title}
-              className="relative border rounded-xl p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition transform bg-white dark:bg-gray-900"
+              className="relative border rounded-xl p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform bg-white dark:bg-gray-900"
               role="region"
               aria-labelledby={`tier-${tier.title.toLowerCase()}`}
             >
-              <h3 className="text-xl font-bold mb-2" id={`tier-${tier.title.toLowerCase()}`}>
-                <span className="mr-2" aria-hidden="true">{tier.icon}</span>
+              {/* Title & Icon */}
+              <h3
+                className="text-xl font-bold mb-2 flex items-center"
+                id={`tier-${tier.title.toLowerCase()}`}
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {tier.icon}
+                </span>
                 {tier.title}
               </h3>
-              <p className="flex-grow text-sm mb-4 text-gray-700 dark:text-gray-300">{tier.desc}</p>
+
+              {/* Description */}
+              <p className="flex-grow text-sm mb-4 text-gray-700 dark:text-gray-300">
+                {tier.desc}
+              </p>
+
+              {/* Delivery */}
               <p className="text-sm mb-2 text-gray-700 dark:text-gray-300">
                 <strong>Delivery:</strong> {tier.delivery}
               </p>
-              <p className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">{tier.price}</p>
+
+              {/* Early‑adopter label & Price */}
+              <div className="mb-6">
+                {tier.early && (
+                  <span
+                    className="block text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400 mb-1"
+                  >
+                    Early‑adopter launch price
+                  </span>
+                )}
+                <span className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+                  {tier.price}
+                </span>
+              </div>
+
+              {/* Call‑to‑action */}
               <button
                 type="button"
                 onClick={() => handleScrollTo("#contact")}
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
                 aria-labelledby={`tier-${tier.title.toLowerCase()}`}
               >
-                Request a Quote →
+                {tier.title === "Custom" ? "Request a Quote →" : "Reserve a slot →"}
               </button>
             </article>
           ))}
