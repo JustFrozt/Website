@@ -180,7 +180,7 @@ export default function HomePageClient() {
               {/* Ribbon label */}
               {tier.early && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-purple-600 text-white text-xs font-semibold shadow-lg ring-1 ring-black/10 dark:bg-purple-700">
-                  Early‑adopter
+                  Early‑adopter-deal
                 </span>
               )}
 
