@@ -224,10 +224,6 @@ export default function HomePageClient() {
             </article>
           ))}
         </div>
-        {/* Launch footnote */}
-        <p className="mt-8 text-center text-xs text-purple-500 dark:text-purple-400">
-          Early‑adopter launch prices apply to the first 5 projects.
-        </p>
       </section>
 
       {/* ------------------------------------------------------------------ */}
