@@ -173,10 +173,17 @@ export default function HomePageClient() {
           ].map((tier) => (
             <article
               key={tier.title}
-              className="relative border rounded-xl p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform bg-white dark:bg-gray-900"
+              className="relative border rounded-xl px-6 pt-10 pb-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform bg-white dark:bg-gray-900"
               role="region"
               aria-labelledby={`tier-${tier.title.toLowerCase()}`}
             >
+              {/* Ribbon label */}
+              {tier.early && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-purple-600 text-white text-xs font-semibold shadow-lg ring-1 ring-black/10 dark:bg-purple-700">
+                  Early‑adopter
+                </span>
+              )}
+
               {/* Title & Icon */}
               <h3
                 className="text-xl font-bold mb-2 flex items-center"
@@ -194,25 +201,18 @@ export default function HomePageClient() {
               </p>
 
               {/* Delivery */}
-              <p className="text-sm mb-2 text-gray-700 dark:text-gray-300">
+              <p className="text-sm mb-4 text-gray-700 dark:text-gray-300">
                 <strong>Delivery:</strong> {tier.delivery}
               </p>
 
-              {/* Early‑adopter label & Price */}
+              {/* Price */}
               <div className="mb-6">
-                {tier.early && (
-                  <span
-                    className="block text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400 mb-1"
-                  >
-                    Early‑adopter launch price
-                  </span>
-                )}
-                <span className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+                <span className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
                   {tier.price}
                 </span>
               </div>
 
-              {/* Call‑to‑action */}
+              {/* Call-to-action */}
               <button
                 type="button"
                 onClick={() => handleScrollTo("#contact")}
@@ -224,6 +224,10 @@ export default function HomePageClient() {
             </article>
           ))}
         </div>
+        {/* Launch footnote */}
+        <p className="mt-8 text-center text-xs text-purple-500 dark:text-purple-400">
+          Early‑adopter launch prices apply to the first 5 projects.
+        </p>
       </section>
 
       {/* ------------------------------------------------------------------ */}
