@@ -174,6 +174,7 @@ export default function HomePageClient() {
               price: "€199",
               typicalCost: "€900+",
               early: true,
+              offer: "Offer valid for the first 10 projects.",
             },
             {
               title: "Advanced",
@@ -183,6 +184,7 @@ export default function HomePageClient() {
               price: "€499",
               typicalCost: "€3k+",
               early: true,
+              offer: "Offer valid for the first 10 projects.",
             },
             {
               title: "Custom",
@@ -221,6 +223,13 @@ export default function HomePageClient() {
                 {tier.desc}
               </p>
 
+              {/* Offer text (NEW) */}
+              {tier.offer && (
+                <p className="text-xs italic mb-3 text-indigo-700 dark:text-indigo-300">
+                  {tier.offer}
+                </p>
+              )}
+
               {/* Delivery */}
               <div className="text-sm mb-4 text-gray-700 dark:text-gray-300">
                 <p><strong>Delivery:</strong> {tier.delivery}</p>
@@ -229,14 +238,13 @@ export default function HomePageClient() {
                 </p>
               </div>
 
-              {/* Price Block - MODIFIED: Added min-h-28 to ensure consistent height */}
+              {/* Price Block */}
               <div className="mb-6 flex-grow flex flex-col justify-end">
                 <div className={`text-xs text-gray-400 ${!tier.typicalCost && 'invisible'}`}>
                   <span>Typical cost: </span>
                   <span className="line-through">{tier.typicalCost || '€0'}</span>
                 </div>
                 
-                {/* Price - MODIFIED: Added conditional classes for size */}
                 <span className={`font-semibold leading-tight text-gray-900 dark:text-gray-100 ${
                   tier.title === 'Custom' ? 'text-2xl' : 'text-3xl'
                 }`}>
