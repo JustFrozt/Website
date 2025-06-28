@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Script from 'next/script';
-import { Code2, Sparkles, Settings } from 'lucide-react';
+import { TerminalSquare, Sparkles, Settings } from 'lucide-react';
 
 export default function HomePageClient() {
   // Reusable scroll handler for buttons, respecting reduced motion
@@ -150,7 +150,8 @@ export default function HomePageClient() {
           {[
             {
               title: "Standard",
-              icon: <Code2 className="w-5 h-5 mr-2 text-indigo-500" aria-hidden="true" />,
+              // MODIFIED: Changed icon to <TerminalSquare />
+              icon: <TerminalSquare className="w-5 h-5 mr-2 text-indigo-500" aria-hidden="true" />,
               desc: "Core Python MVP: single back-end service, CLI, or automation tool. Includes CRUD, tests & docs.",
               delivery: "1–3\u00a0workdays",
               price: "€79",
@@ -183,7 +184,7 @@ export default function HomePageClient() {
             >
               {/* Ribbon label */}
               {tier.early && (
-                <span className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-semibold shadow-lg ring-1 ring-indigo-300 dark:ring-indigo-300">
+                <span className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-semibold shadow-lg ring-1 ring-indigo-300/50">
                   Early-adopter pricing
                 </span>
               )}
@@ -194,7 +195,6 @@ export default function HomePageClient() {
                 id={`tier-${tier.title.toLowerCase()}`}
               >
                 {tier.icon}
-                <span className="sr-only">{tier.title} tier </span>
                 {tier.title}
               </h3>
 
@@ -214,13 +214,15 @@ export default function HomePageClient() {
               {/* Price Block */}
               <div className="mb-6">
                 {/* Typical Cost */}
-                {tier.typicalCost && (
-                  <div className="text-xs text-gray-400" aria-label="Typical market cost">
+                {tier.typicalCost ? (
+                  <div className="text-xs text-gray-400">
                     <span>Typical cost: </span>
                     <span className="line-through">{tier.typicalCost}</span>
-                    <sup>1</sup>
                   </div>
+                ) : (
+                  <div className="text-xs"> </div>
                 )}
+                
                 {/* Actual Price */}
                 <span className="text-3xl leading-tight font-semibold text-indigo-600 dark:text-indigo-400">
                   {tier.price}
@@ -230,10 +232,8 @@ export default function HomePageClient() {
               {/* Call-to-action */}
               <button
                 type="button"
-                id={`pricing-cta-${tier.title.toLowerCase()}`}
                 onClick={() => handleScrollTo("#contact")}
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
-                aria-labelledby={`tier-${tier.title.toLowerCase()}`}
               >
                 {tier.title === "Custom" ? "Request a Quote →" : "Start project review →"}
               </button>
@@ -241,9 +241,9 @@ export default function HomePageClient() {
           ))}
         </div>
         {/* Footnote for Typical Cost */}
-        <footer className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
+        <footer role="note" className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
           <p>
-            <sup>1</sup> Based on average EU freelance developer rates of €55–95/hr for a comparable project scope.
+            Based on average EU freelance developer rates of €55–95/hr for a comparable project scope.
           </p>
         </footer>
       </section>
