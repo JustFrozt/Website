@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Script from 'next/script';
 
 export default function HomePageClient() {
   // Reusable scroll handler for buttons, respecting reduced motion
@@ -351,22 +352,31 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* CONTACT (GOOGLE FORM)                                              */}
+      {/* CONTACT (TALLY FORM)                                               */}
       {/* ------------------------------------------------------------------ */}
       <section id="contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           Ready to start? Fill out the form with your project details. We’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
+        
         <div className="max-w-3xl mx-auto">
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfZ3KOzbgaoGcHrg_EkaXruMr6c5QArRFlyf4jnlKBuRQca3g/viewform?embedded=true&hl=en"
-            title="Project Intake Form"
-            loading="lazy"
-            className="w-full min-h-[900px] border rounded-xl bg-white shadow-lg dark:bg-gray-800"
-            aria-label="Project Intake Form"
+            data-tally-src="https://tally.so/r/mZAJko?transparentBackground=1"
+            width="100%"
+            height="700"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title="ZeroForm – MVP Request"
+          ></iframe>
+          <Script
+            id="tally-widget"
+            src="https://tally.so/widgets/embed.js"
+            strategy="lazyOnload"
           />
         </div>
+
       </section>
 
       {/* ------------------------------------------------------------------ */}
