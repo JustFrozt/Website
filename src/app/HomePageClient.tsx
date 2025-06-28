@@ -180,18 +180,18 @@ export default function HomePageClient() {
               scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Flask API, admin CLI, scheduled jobs, or third-party integrations, fully documented.",
               delivery: "5-10\u00a0workdays",
-              price: "€399",
-              typicalCost: "€2,000+",
+              price: "€499",
+              typicalCost: "€3k+",
               early: true,
             },
             {
               title: "Custom",
               icon: <Settings className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
-              desc: "Complex Python solutions: cross-service orchestration, data pipelines, or specialised workflows.",
+              desc: "Complex Python solutions: cross-service orchestration, complex data pipelines, or specialised workflows.",
               scopeTitle: "MVP Scope Examples (Flexible)",
               delivery: "4+\u00a0weeks",
-              price: "€4k - €16k",
-              typicalCost: "€20k+",
+              price: "€4k - €15k + 30% payed Up-front",
+              typicalCost: "€30k+",
               early: false,
             },
           ].map((tier) => (
@@ -343,7 +343,7 @@ export default function HomePageClient() {
           {[
             {
               q: "How is the process so fast?",
-              a: "It’s fully autonomous, instantly generating and validating Python code."
+              a: "It’s 80-90% autonimous, instantly generating and validating Python code, we do the rest manually."
             },
             {
               q: "Can I review the code?",
@@ -351,11 +351,11 @@ export default function HomePageClient() {
             },
             {
               q: "Do you build mobile apps?",
-              a: "Soon. For now, we focus on Python back‑ends. If your mobile app needs one, we can help."
+              a: "Soon. For now, we focus on Python back‑ends and simple MVPs. If your mobile app needs one, we can help."
             },
             {
               q: "Do I pay upfront?",
-              a: "No, pay only after you have reviewed and approved your project."
+              a: "No, pay only after you have reviewed and approved your project for Simple and Advanced MVPs."
             }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
