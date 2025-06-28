@@ -189,7 +189,7 @@ export default function HomePageClient() {
               icon: <Settings className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
               desc: "Complex Python solutions: cross-service orchestration, complex data pipelines, or specialised workflows.",
               delivery: "4+\u00a0weeks",
-              price: "€4k - €15k + 30% payed Up-front",
+              price: "€4\u00a0000–€15\u00a0000 (30% deposit)",
               typicalCost: "€30k+",
               early: false,
             },
@@ -344,7 +344,7 @@ export default function HomePageClient() {
           {[
             {
               q: "How is the process so fast?",
-              a: "It’s 80-90% autonimous, instantly generating and validating Python code, we do the rest manually."
+              a: "It’s 80-90% autonomous, instantly generating and validating Python code, we do the rest manually."
             },
             {
               q: "Can I review the code?",
@@ -356,7 +356,7 @@ export default function HomePageClient() {
             },
             {
               q: "Do I pay upfront?",
-              a: "No, pay only after you have reviewed and approved your project for Simple and Advanced MVPs."
+              a: "No, pay only after you have reviewed and approved your project for Standard and Advanced MVPs."
             }
           ].map(({ q, a }, i) => (
             <details key={i} className="p-4 border rounded-xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
