@@ -107,7 +107,8 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
-        <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-6xl mx-auto">
+        {/* MODIFIED: Switched from 'flex' to a responsive 'grid' layout */}
+        <ol className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {[
             { 
               title: "Submit Your Idea", 
@@ -130,9 +131,10 @@ export default function HomePageClient() {
               desc: "You get a production‑ready MVP, typically within 2-5 business days." 
             }
           ].map((step, index) => (
+            // MODIFIED: Removed flex-1 and min-w-[200px] as they are no longer needed with a grid layout
             <li
               key={index}
-              className="flex flex-col items-center text-center flex-1 min-w-[200px]"
+              className="flex flex-col items-center text-center"
             >
               <div className="h-12 w-12 mb-4 flex items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold shadow-lg" aria-hidden="true">
                 {index + 1}
