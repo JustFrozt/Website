@@ -1,17 +1,17 @@
 import { Metadata } from 'next';
-import HomePageClient from './HomePageClient'; // We will create this component next
+import HomePageClient from './HomePageClient';
 
 // -----------------------------------------------------------------------------
 // Meta & Open Graph Tags for SEO and Social Sharing
 // -----------------------------------------------------------------------------
 export const metadata: Metadata = {
-  title: 'ZeroForm – AI-generated Python MVPs in 48 h',
-  description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+  title: 'ZeroForm – AI-generated Python MVPs in Days',
+  description: 'Production-grade Python back-end MVPs delivered in 1-7 Days. Fixed-price, no upfront payment, 80% built by AI.',
   openGraph: {
     type: 'website',
     url: 'https://zeroform.ai/',
-    title: 'ZeroForm – AI-generated Python MVPs in 48 h',
-    description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+    title: 'ZeroForm – AI-generated Python MVPs in days',
+    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment, 80% built by AI.',
     images: [
       {
         url: 'https://zeroform.ai/og-cover.png',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZeroForm – AI-generated Python MVPs in 48 h',
-    description: 'Production-grade Python back-end MVPs delivered in 48 hours. Fixed-price, no upfront payment, built entirely by AI.',
+    title: 'ZeroForm – AI-generated Python MVPs in Days',
+    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment, 80% built by AI.',
     images: ['https://zeroform.ai/og-cover.png'],
   },
   alternates: {

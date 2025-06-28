@@ -107,12 +107,28 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
-        <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-5xl mx-auto">
+        <ol className="flex flex-col sm:flex-row justify-center items-start gap-12 max-w-6xl mx-auto">
           {[
-            { title: "Submit Your Idea", desc: "Share your project requirements using the form below." },
-            { title: "Review & Quote", desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote." },
-            { title: "Autonomous Build", desc: "Once approved, our AI plans, writes, and tests 100% of the Python code." },
-            { title: "Receive Your MVP", desc: "You get a production‑ready MVP, typically within 48 to 72 hours." }
+            { 
+              title: "Submit Your Idea", 
+              desc: "Tell us what you need via the form below." 
+            },
+            { 
+              title: "Review & Quote", 
+              desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote based on complexity." 
+            },
+            { 
+              title: "AI-Powered Generation", 
+              desc: "Our AI pipeline autonomously writes, documents, and tests the entire Python codebase based on the approved plan." 
+            },
+            { 
+              title: "Human Review & Polish", 
+              desc: "Our engineers then review and optimize the AI-generated code, ensuring it meets production-grade standards." 
+            },
+            { 
+              title: "Receive Your MVP", 
+              desc: "You get a production‑ready MVP, typically within 2-5 business days." 
+            }
           ].map((step, index) => (
             <li
               key={index}
@@ -150,12 +166,11 @@ export default function HomePageClient() {
           {[
             {
               title: "Standard",
-              // MODIFIED: Changed icon to <Package />
               icon: <TerminalSquare className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
               scopeTitle: "MVP Scope Examples (Flexible)",
-              desc: "Core Python MVP: single back-end service, CLI, or automation tool. Includes CRUD, tests & docs.",
-              delivery: "1-3\u00a0workdays",
-              price: "€79",
+              desc: "Core Python MVP: single back-end service, CLI, or automation tool. Includes CRUD, tests & full docs.",
+              delivery: "2-5\u00a0workdays",
+              price: "€199",
               typicalCost: "€900+",
               early: true,
             },
@@ -164,8 +179,8 @@ export default function HomePageClient() {
               icon: <Sparkles className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
               scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Flask API, admin CLI, scheduled jobs, or third-party integrations, fully documented.",
-              delivery: "4–5\u00a0workdays",
-              price: "€249",
+              delivery: "5-10\u00a0workdays",
+              price: "€399",
               typicalCost: "€2,000+",
               early: true,
             },
@@ -173,8 +188,10 @@ export default function HomePageClient() {
               title: "Custom",
               icon: <Settings className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
               desc: "Complex Python solutions: cross-service orchestration, data pipelines, or specialised workflows.",
-              delivery: "7+\u00a0workdays",
-              price: "Custom Quote",
+              scopeTitle: "MVP Scope Examples (Flexible)",
+              delivery: "4+\u00a0weeks",
+              price: "€4k - €16k",
+              typicalCost: "€20k+",
               early: false,
             },
           ].map((tier) => (
@@ -187,7 +204,7 @@ export default function HomePageClient() {
               {/* Ribbon label */}
               {tier.early && (
                 <span className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-semibold shadow-lg">
-                  Early-adopter pricing
+                  Launch window pricing
                 </span>
               )}
 
