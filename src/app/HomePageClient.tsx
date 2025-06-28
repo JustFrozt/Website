@@ -150,26 +150,28 @@ export default function HomePageClient() {
           {[
             {
               title: "Standard",
-              // MODIFIED: Changed icon to <TerminalSquare />
-              icon: <TerminalSquare className="w-5 h-5 mr-2 text-indigo-500" aria-hidden="true" />,
+              icon: <Package className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
+              scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Core Python MVP: single back-end service, CLI, or automation tool. Includes CRUD, tests & docs.",
-              delivery: "1–3\u00a0workdays",
+              delivery: "1-3\u00a0workdays",
               price: "€79",
-              typicalCost: "€900 +",
+              typicalCost: "€900+",
               early: true,
             },
             {
               title: "Advanced",
-              icon: <Sparkles className="w-5 h-5 mr-2 text-indigo-500" aria-hidden="true" />,
-              desc: "Multi-entity API, admin CLI, scheduled jobs, or third-party integrations, fully documented.",
+              icon: <Sparkles className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
+              scopeTitle: "MVP Scope Examples (Flexible)",
+              desc: "Feature-rich API, admin CLI, scheduled jobs, or third-party integrations, fully documented.",
               delivery: "4–5\u00a0workdays",
               price: "€249",
-              typicalCost: "€2,000 +",
+              typicalCost: "€2,000+",
               early: true,
             },
             {
               title: "Custom",
-              icon: <Settings className="w-5 h-5 mr-2 text-indigo-500" aria-hidden="true" />,
+              icon: <Settings className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
+              scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Complex Python solutions: cross-service orchestration, data pipelines, or specialised workflows.",
               delivery: "7+\u00a0workdays",
               price: "Custom Quote",
@@ -184,8 +186,8 @@ export default function HomePageClient() {
             >
               {/* Ribbon label */}
               {tier.early && (
-                <span className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-semibold shadow-lg ring-1 ring-indigo-300/50">
-                  Early-adopter pricing
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-purple-600 text-white text-xs font-semibold shadow-lg">
+                  Early-adopter-deal
                 </span>
               )}
 
@@ -197,6 +199,11 @@ export default function HomePageClient() {
                 {tier.icon}
                 {tier.title}
               </h3>
+
+              {/* NEW: Scope Examples Subheading */}
+              <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-4 mb-2">
+                {tier.scopeTitle}
+              </h4>
 
               {/* Description */}
               <p className="text-sm mb-3 text-gray-700 dark:text-gray-300">
@@ -213,7 +220,7 @@ export default function HomePageClient() {
 
               {/* Price Block */}
               <div className="mb-6">
-                {/* Typical Cost */}
+                {/* Typical Cost & Alignment Fix */}
                 {tier.typicalCost ? (
                   <div className="text-xs text-gray-400">
                     <span>Typical cost: </span>
@@ -223,8 +230,8 @@ export default function HomePageClient() {
                   <div className="text-xs"> </div>
                 )}
                 
-                {/* Actual Price */}
-                <span className="text-3xl leading-tight font-semibold text-indigo-600 dark:text-indigo-400">
+                {/* Price */}
+                <span className="text-3xl leading-tight font-semibold text-gray-900 dark:text-gray-100">
                   {tier.price}
                 </span>
               </div>
@@ -235,13 +242,13 @@ export default function HomePageClient() {
                 onClick={() => handleScrollTo("#contact")}
                 className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
               >
-                {tier.title === "Custom" ? "Request a Quote →" : "Start project review →"}
+                {tier.title === "Custom" ? "Request a Quote →" : "Reserve a slot →"}
               </button>
             </article>
           ))}
         </div>
-        {/* Footnote for Typical Cost */}
-        <footer role="note" className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
+        {/* Footnote */}
+        <footer className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
           <p>
             Based on average EU freelance developer rates of €55–95/hr for a comparable project scope.
           </p>
