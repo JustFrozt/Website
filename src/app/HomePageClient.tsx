@@ -82,16 +82,16 @@ export default function HomePageClient() {
         className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> - Delivered by <span className="text-indigo-600">AI</span> in 48 Hours
+          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> - Delivered by <span className="text-indigo-600">AI</span> Days
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Your personal AI back‑end engineer, on demand.
+          Your personal AI back‑end engineer and development team, on demand.
         </p>
         <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
-          Professional‑grade back‑end MVPs built exclusively in Python: APIs, data pipelines, CLI
+          Professional‑grade back‑end MVPs built exclusively in Python, Examples include: APIs, data pipelines, CLI
           tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase
-          generated, committed, and ready to deploy on Docker.
+          generated, refined, and ready to deploy.
         </p>
         <button
           type="button"
@@ -167,7 +167,6 @@ export default function HomePageClient() {
             {
               title: "Standard",
               icon: <TerminalSquare className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
-              scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Core Python MVP: single back-end service, CLI, or automation tool. Includes CRUD, tests & full docs.",
               delivery: "2-5\u00a0workdays",
               price: "€199",
@@ -177,7 +176,6 @@ export default function HomePageClient() {
             {
               title: "Advanced",
               icon: <Sparkles className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
-              scopeTitle: "MVP Scope Examples (Flexible)",
               desc: "Flask API, admin CLI, scheduled jobs, or third-party integrations, fully documented.",
               delivery: "5-10\u00a0workdays",
               price: "€499",
@@ -188,7 +186,6 @@ export default function HomePageClient() {
               title: "Custom",
               icon: <Settings className="w-5 h-5 mr-2 text-purple-600" aria-hidden="true" />,
               desc: "Complex Python solutions: cross-service orchestration, complex data pipelines, or specialised workflows.",
-              scopeTitle: "MVP Scope Examples (Flexible)",
               delivery: "4+\u00a0weeks",
               price: "€4k - €15k + 30% payed Up-front",
               typicalCost: "€30k+",
@@ -230,15 +227,17 @@ export default function HomePageClient() {
                 </p>
               </div>
 
-              {/* Price Block */}
-              <div className="mb-6">
+              {/* Price Block - MODIFIED: Added min-h-28 to ensure consistent height */}
+              <div className="mb-6 flex-grow flex flex-col justify-end">
                 <div className={`text-xs text-gray-400 ${!tier.typicalCost && 'invisible'}`}>
                   <span>Typical cost: </span>
                   <span className="line-through">{tier.typicalCost || '€0'}</span>
                 </div>
                 
-                {/* MODIFIED: Reverted price color */}
-                <span className="text-3xl leading-tight font-semibold text-gray-900 dark:text-gray-100">
+                {/* Price - MODIFIED: Added conditional classes for size */}
+                <span className={`font-semibold leading-tight text-gray-900 dark:text-gray-100 ${
+                  tier.title === 'Custom' ? 'text-2xl' : 'text-3xl'
+                }`}>
                   {tier.price}
                 </span>
               </div>
@@ -254,7 +253,7 @@ export default function HomePageClient() {
             </article>
           ))}
         </div>
-        {/* MODIFIED: Footnote text without the superscript */}
+        {/* Footnote */}
         <footer className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
           <p>
             Based on average EU freelance developer rates of €55–95/hr for a comparable project scope.
