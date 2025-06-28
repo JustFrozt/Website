@@ -362,7 +362,7 @@ export default function HomePageClient() {
         
         <div className="max-w-3xl mx-auto">
           <iframe
-            data-tally-src="https://tally.so/r/mZAJko?transparentBackground=1"
+            data-tally-src="https://tally.so/r/mZAJko"
             width="100%"
             height={700}
             frameBorder={0}
