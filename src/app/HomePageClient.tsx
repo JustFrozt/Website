@@ -404,9 +404,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* FOOTER (DARK)                                                      */}
+      {/* FOOTER                                                             */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
+      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800">
         <p>ZeroForm – Generating the future</p>
         <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
 
