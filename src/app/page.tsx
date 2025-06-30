@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://zeroform.ai/',
     title: 'ZeroForm – AI-generated Python MVPs in days',
-    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment, 80% built by AI.',
+    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment for Standard and Advanced MVPs, up to 80% built by AI.',
     images: [
       {
         url: 'https://zeroform.ai/og-cover.png',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ZeroForm – AI-generated Python MVPs in Days',
-    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment, 80% built by AI.',
+    description: 'Production-grade Python back-end MVPs Delivered in Days. Fixed-price, no upfront payment for Standard and Advanced MVPs, up to 80% built by AI..',
     images: ['https://zeroform.ai/og-cover.png'],
   },
   alternates: {
