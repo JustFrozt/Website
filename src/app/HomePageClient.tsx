@@ -82,7 +82,7 @@ export default function HomePageClient() {
         className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully Automated <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> - Delivered by <span className="text-indigo-600">AI</span> in Days
+          Fully <span className="text-indigo-600">Tested</span> <abbr title="Minimum Viable Product" className="no-underline cursor-help">MVPs</abbr> - Delivered in <span className="text-indigo-600">Days</span>
         </h1>
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
           Your personal AI back‑end engineer and development team, on demand.
@@ -90,8 +90,8 @@ export default function HomePageClient() {
         <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
           Professional‑grade MVPs and back‑ends built exclusively in Python, Examples include: APIs, data pipelines, CLI
-          tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase
-          generated, refined, and ready to deploy.
+          tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase, planned
+          generated, refined, tested, and ready to deploy.
         </p>
         <button
           type="button"
@@ -103,6 +103,41 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
+      {/* SHOWCASE                                                           */}
+      {/* ------------------------------------------------------------------ */}
+      <section id="showcase" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+        <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
+        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
+          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+            <span role="img" aria-label="rocket">
+              🚀
+            </span>
+            Flask Notes API
+          </h3>
+          <p className="text-sm mb-6 text-center text-gray-700 dark:text-gray-300">
+            A complete ZeroForm‑generated example: secure JWT auth, full CRUD, SQLite, tests, and
+            Swagger docs, all written autonomously.
+          </p>
+          {/* GitHub CI badge */}
+          <Image
+            src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
+            alt="GitHub CI badge indicating build status"
+            className="mb-4"
+            width={148}
+            height={20}
+          />
+          <a
+            href="https://github.com/JustFrozt/ZeroForm-Showcase"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition"
+          >
+            View the GitHub Repository →
+          </a>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
       {/* HOW IT WORKS                                                       */}
       {/* ------------------------------------------------------------------ */}
       <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
@@ -110,25 +145,25 @@ export default function HomePageClient() {
         {/* MODIFIED: Switched from 'flex' to a responsive 'grid' layout */}
         <ol className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {[
-            { 
-              title: "Submit Your Idea", 
-              desc: "Tell us what you need via the form below." 
+            {
+              title: "Submit Your Idea",
+              desc: "Tell us what you need via the form below."
             },
-            { 
-              title: "Review & Quote", 
-              desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote based on complexity." 
+            {
+              title: "Review & Quote",
+              desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote based on complexity."
             },
-            { 
-              title: "AI-Powered Generation", 
-              desc: "Our AI pipeline autonomously writes, documents, and tests the entire Python codebase based on the approved plan." 
+            {
+              title: "AI-Powered Generation",
+              desc: "Our AI pipeline autonomously writes, documents, and tests the entire Python codebase based on the approved plan."
             },
-            { 
-              title: "Human Review & Polish", 
-              desc: "Our engineers then review and optimize the AI-generated code, ensuring it meets production-grade standards." 
+            {
+              title: "Human Review & Polish",
+              desc: "Our engineers then review and optimize the AI-generated code, ensuring it meets production-grade standards."
             },
-            { 
-              title: "Receive Your MVP", 
-              desc: "You get a production‑ready MVP, typically within 2-5 business days." 
+            {
+              title: "Receive Your MVP",
+              desc: "You get a production‑ready MVP, typically within 2-5 business days."
             }
           ].map((step, index) => (
             // MODIFIED: Removed flex-1 and min-w-[200px] as they are no longer needed with a grid layout
@@ -155,7 +190,7 @@ export default function HomePageClient() {
           ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, we can help.
         </p>
       </section>
-      
+
       {/* ------------------------------------------------------------------ */}
       {/* PRICING                                                            */}
       {/* ------------------------------------------------------------------ */}
@@ -244,10 +279,9 @@ export default function HomePageClient() {
                   <span>Typical cost: </span>
                   <span className="line-through">{tier.typicalCost || '€0'}</span>
                 </div>
-                
-                <span className={`font-semibold leading-tight text-gray-900 dark:text-gray-100 ${
-                  tier.title === 'Custom' ? 'text-2xl' : 'text-3xl'
-                }`}>
+
+                <span className={`font-semibold leading-tight text-gray-900 dark:text-gray-100 ${tier.title === 'Custom' ? 'text-2xl' : 'text-3xl'
+                  }`}>
                   {tier.price}
                 </span>
               </div>
@@ -295,41 +329,6 @@ export default function HomePageClient() {
               <strong>Confidentiality:</strong> Your ideas and code remain private and are never reused or shared without your explicit permission.
             </li>
           </ul>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------------------ */}
-      {/* SHOWCASE                                                           */}
-      {/* ------------------------------------------------------------------ */}
-      <section id="showcase" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
-        <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
-        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
-          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-            <span role="img" aria-label="rocket">
-              🚀
-            </span>
-            Flask Notes API
-          </h3>
-          <p className="text-sm mb-6 text-center text-gray-700 dark:text-gray-300">
-            A complete ZeroForm‑generated example: secure JWT auth, full CRUD, SQLite, tests, and
-            Swagger docs, all written autonomously.
-          </p>
-          {/* GitHub CI badge */}
-          <Image
-            src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
-            alt="GitHub CI badge indicating build status"
-            className="mb-4"
-            width={148}
-            height={20}
-          />
-          <a
-            href="https://github.com/JustFrozt/ZeroForm-Showcase"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition"
-          >
-            View the GitHub Repository →
-          </a>
         </div>
       </section>
 
@@ -403,7 +402,7 @@ export default function HomePageClient() {
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           Ready to start? Fill out the form with your project details. We’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
         </p>
-        
+
         <div className="max-w-3xl mx-auto">
           <iframe
             data-tally-src="https://tally.so/r/mZAJko"
@@ -429,7 +428,7 @@ export default function HomePageClient() {
       <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
         <p>ZeroForm – Generating the future</p>
         <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
-        
+
         {/* Legal Link Added Here */}
         <div className="mt-4">
           <a href="/legal/terms.html" className="hover:text-indigo-600 transition-colors">
