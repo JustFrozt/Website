@@ -103,11 +103,10 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* HOW IT WORKS                                                       */}
+      {/* HOW IT WORKS (DARK)                                                */}
       {/* ------------------------------------------------------------------ */}
       <section id="how" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">How It Works</h2>
-        {/* MODIFIED: Switched from 'flex' to a responsive 'grid' layout */}
         <ol className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {[
             {
@@ -131,7 +130,6 @@ export default function HomePageClient() {
               desc: "You get a production‑ready MVP, typically within 2-5 business days."
             }
           ].map((step, index) => (
-            // MODIFIED: Removed flex-1 and min-w-[200px] as they are no longer needed with a grid layout
             <li
               key={index}
               className="flex flex-col items-center text-center"
@@ -147,11 +145,11 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* SHOWCASE                                                           */}
+      {/* SHOWCASE (LIGHT)                                                   */}
       {/* ------------------------------------------------------------------ */}
       <section id="showcase" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
-        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-white dark:bg-gray-900">
           <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
             <span role="img" aria-label="rocket">
               🚀
@@ -162,7 +160,6 @@ export default function HomePageClient() {
             A complete ZeroForm‑generated example: secure JWT auth, full CRUD, SQLite, tests, and
             Swagger docs, all written autonomously.
           </p>
-          {/* GitHub CI badge */}
           <Image
             src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
             alt="GitHub CI badge indicating build status"
@@ -174,7 +171,7 @@ export default function HomePageClient() {
             href="https://github.com/JustFrozt/ZeroForm-Showcase"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition"
+            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-white dark:ring-offset-gray-900 transition"
           >
             View the GitHub Repository →
           </a>
@@ -182,9 +179,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* TECHNOLOGY & SCOPE                                                 */}
+      {/* TECHNOLOGY & SCOPE (LIGHT)                                         */}
       {/* ------------------------------------------------------------------ */}
-      <section id="tech" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
+      <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
           ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, we can help.
@@ -192,9 +189,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* PRICING                                                            */}
+      {/* PRICING (DARK)                                                     */}
       {/* ------------------------------------------------------------------ */}
-      <section id="pricing" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
+      <section id="pricing" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Pricing</h2>
         <p className="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-10">
           The tiers below are a guide. After you submit your project, we’ll review it and provide a formal quote confirming scope and final price.
@@ -233,18 +230,15 @@ export default function HomePageClient() {
           ].map((tier) => (
             <article
               key={tier.title}
-              className="relative border rounded-xl px-6 pt-10 pb-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform bg-white dark:bg-gray-900"
+              className="relative border rounded-xl px-6 pt-10 pb-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform bg-gray-50 dark:bg-gray-800"
               role="region"
               aria-labelledby={`tier-${tier.title.toLowerCase()}`}
             >
-              {/* Ribbon label */}
               {tier.early && (
                 <span className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-semibold shadow-lg">
                   Launch window pricing
                 </span>
               )}
-
-              {/* Title & Icon */}
               <h3
                 className="text-xl font-semibold mb-2 flex items-center"
                 id={`tier-${tier.title.toLowerCase()}`}
@@ -252,52 +246,40 @@ export default function HomePageClient() {
                 {tier.icon}
                 {tier.title}
               </h3>
-
-              {/* Description */}
               <p className="text-sm mb-3 text-gray-700 dark:text-gray-300">
                 {tier.desc}
               </p>
-
-              {/* Offer text (NEW) */}
               {tier.offer && (
                 <p className="text-xs italic mb-3 text-indigo-700 dark:text-indigo-300">
                   {tier.offer}
                 </p>
               )}
-
-              {/* Delivery */}
               <div className="text-sm mb-4 text-gray-700 dark:text-gray-300">
                 <p><strong>Delivery:</strong> {tier.delivery}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   100% refund if delivery window is missed.
                 </p>
               </div>
-
-              {/* Price Block */}
               <div className="mb-6 flex-grow flex flex-col justify-end">
                 <div className={`text-xs text-gray-400 ${!tier.typicalCost && 'invisible'}`}>
                   <span>Typical cost: </span>
                   <span className="line-through">{tier.typicalCost || '€0'}</span>
                 </div>
-
                 <span className={`font-semibold leading-tight text-gray-900 dark:text-gray-100 ${tier.title === 'Custom' ? 'text-2xl' : 'text-3xl'
                   }`}>
                   {tier.price}
                 </span>
               </div>
-
-              {/* Call-to-action */}
               <button
                 type="button"
                 onClick={() => handleScrollTo("#contact")}
-                className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition text-center"
+                className="mt-auto inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-800 transition text-center"
               >
                 {tier.title === "Custom" ? "Request a Quote →" : "Reserve a slot →"}
               </button>
             </article>
           ))}
         </div>
-        {/* Footnote */}
         <footer className="text-center text-xs text-gray-500 dark:text-gray-400 mt-8 max-w-lg mx-auto">
           <p>
             Based on average EU freelance developer rates of €55–95/hr for a comparable project scope.
@@ -306,10 +288,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* KEY PURCHASE DETAILS                                               */}
+      {/* KEY PURCHASE DETAILS (DARK)                                        */}
       {/* ------------------------------------------------------------------ */}
       <section id="details" className="pt-24 py-10 px-6 bg-white border-b dark:bg-gray-900 dark:border-gray-700 scroll-mt-32 lg:scroll-mt-24">
-        {/* RULES */}
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-center mb-4">Key Purchase Details:</h2>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-base space-y-2 sm:max-w-md mx-auto">
@@ -333,9 +314,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* PAYMENTS                                                           */}
+      {/* PAYMENTS (DARK)                                                    */}
       {/* ------------------------------------------------------------------ */}
-      <section id="payments" className="pt-24 py-16 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="payments" className="pt-24 py-16 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-2xl font-semibold text-center mb-6">Payments & Invoicing</h2>
         <p className="max-w-4xl mx-auto text-sm sm:text-base text-center text-gray-700 dark:text-gray-300">
           All transactions are handled through <strong>Frilans Finans</strong>, Sweden’s leading umbrella company for freelancers. Once we agree on scope and price you’ll receive an official Frilans Finans invoice and can pay via card, Swish, or bank transfer, whichever suits you best.
@@ -343,9 +324,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* FAQ                                                                */}
+      {/* FAQ (LIGHT)                                                        */}
       {/* ------------------------------------------------------------------ */}
-      <section id="faq" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="faq" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
@@ -377,9 +358,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* EMAIL CONTACT (NEW SECTION)                                        */}
+      {/* EMAIL CONTACT (DARK)                                               */}
       {/* ------------------------------------------------------------------ */}
-      <section id="email-contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="email-contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Have a Quick Question?</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           If you prefer to send a direct email for general inquiries, feel free to reach out. For official project submissions, please use the form below.
@@ -395,7 +376,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* CONTACT (TALLY FORM)                                               */}
+      {/* CONTACT (TALLY FORM) (DARK)                                        */}
       {/* ------------------------------------------------------------------ */}
       <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
@@ -423,13 +404,12 @@ export default function HomePageClient() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* FOOTER                                                             */}
+      {/* FOOTER (DARK)                                                      */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800">
+      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
         <p>ZeroForm – Generating the future</p>
         <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
 
-        {/* Legal Link Added Here */}
         <div className="mt-4">
           <a href="/legal/terms.html" className="hover:text-indigo-600 transition-colors">
             Terms of Service
