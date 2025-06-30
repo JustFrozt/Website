@@ -149,7 +149,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* SHOWCASE                                                           */}
       {/* ------------------------------------------------------------------ */}
-      <section id="showcase" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="showcase" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
         <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
           <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
@@ -184,7 +184,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* TECHNOLOGY & SCOPE                                                 */}
       {/* ------------------------------------------------------------------ */}
-      <section id="tech" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-32 lg:scroll-mt-24">
+      <section id="tech" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-32 lg:scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-6">Technology & Scope</h2>
         <p className="max-w-4xl mx-auto text-lg text-center text-gray-800 dark:text-gray-200">
           ZeroForm produces <strong>Python‑only codebases</strong>. Supported outputs include Flask or FastAPI services, CLI utilities, data‑processing pipelines, and automation scripts. Front‑end UIs, graphical mobile apps, and non‑Python runtimes are <strong>outside scope</strong>. If you only need the Python back‑end, we can help.
@@ -335,7 +335,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* PAYMENTS                                                           */}
       {/* ------------------------------------------------------------------ */}
-      <section id="payments" className="pt-24 py-16 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="payments" className="pt-24 py-16 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-2xl font-semibold text-center mb-6">Payments & Invoicing</h2>
         <p className="max-w-4xl mx-auto text-sm sm:text-base text-center text-gray-700 dark:text-gray-300">
           All transactions are handled through <strong>Frilans Finans</strong>, Sweden’s leading umbrella company for freelancers. Once we agree on scope and price you’ll receive an official Frilans Finans invoice and can pay via card, Swish, or bank transfer, whichever suits you best.
@@ -345,7 +345,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* FAQ                                                                */}
       {/* ------------------------------------------------------------------ */}
-      <section id="faq" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="faq" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">FAQ</h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
@@ -379,7 +379,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* EMAIL CONTACT (NEW SECTION)                                        */}
       {/* ------------------------------------------------------------------ */}
-      <section id="email-contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="email-contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-4">Have a Quick Question?</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           If you prefer to send a direct email for general inquiries, feel free to reach out. For official project submissions, please use the form below.
@@ -397,7 +397,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* CONTACT (TALLY FORM)                                               */}
       {/* ------------------------------------------------------------------ */}
-      <section id="contact" className="pt-24 py-20 px-6 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
+      <section id="contact" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
         <h2 className="text-3xl font-semibold text-center mb-10">Start Your Project</h2>
         <p className="text-center mb-8 text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
           Ready to start? Fill out the form with your project details. We’ll personally review your submission, confirm the project scope and pricing tier, and get back to you with a formal quote within 24 hours.
@@ -425,7 +425,7 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* FOOTER                                                             */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
+      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800">
         <p>ZeroForm – Generating the future</p>
         <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
 
