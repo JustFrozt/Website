@@ -90,7 +90,7 @@ export default function HomePageClient() {
         <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
           Professional‑grade MVPs and back‑ends built exclusively in Python, Examples include: APIs, data pipelines, CLI
-          tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase, planned
+          tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase, planned,
           generated, refined, tested, and ready to deploy.
         </p>
         <button
@@ -100,41 +100,6 @@ export default function HomePageClient() {
         >
           Request Your MVP →
         </button>
-      </section>
-
-      {/* ------------------------------------------------------------------ */}
-      {/* SHOWCASE                                                           */}
-      {/* ------------------------------------------------------------------ */}
-      <section id="showcase" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
-        <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
-        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
-          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-            <span role="img" aria-label="rocket">
-              🚀
-            </span>
-            Flask Notes API
-          </h3>
-          <p className="text-sm mb-6 text-center text-gray-700 dark:text-gray-300">
-            A complete ZeroForm‑generated example: secure JWT auth, full CRUD, SQLite, tests, and
-            Swagger docs, all written autonomously.
-          </p>
-          {/* GitHub CI badge */}
-          <Image
-            src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
-            alt="GitHub CI badge indicating build status"
-            className="mb-4"
-            width={148}
-            height={20}
-          />
-          <a
-            href="https://github.com/JustFrozt/ZeroForm-Showcase"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition"
-          >
-            View the GitHub Repository →
-          </a>
-        </div>
       </section>
 
       {/* ------------------------------------------------------------------ */}
@@ -179,6 +144,41 @@ export default function HomePageClient() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* SHOWCASE                                                           */}
+      {/* ------------------------------------------------------------------ */}
+      <section id="showcase" className="pt-24 py-20 px-6 bg-white dark:bg-gray-900 scroll-mt-24">
+        <h2 className="text-3xl font-semibold text-center mb-10">Live Showcase</h2>
+        <div className="max-w-xl mx-auto border rounded-2xl shadow-xl p-8 flex flex-col items-center bg-gray-50 dark:bg-gray-800">
+          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+            <span role="img" aria-label="rocket">
+              🚀
+            </span>
+            Flask Notes API
+          </h3>
+          <p className="text-sm mb-6 text-center text-gray-700 dark:text-gray-300">
+            A complete ZeroForm‑generated example: secure JWT auth, full CRUD, SQLite, tests, and
+            Swagger docs, all written autonomously.
+          </p>
+          {/* GitHub CI badge */}
+          <Image
+            src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
+            alt="GitHub CI badge indicating build status"
+            className="mb-4"
+            width={148}
+            height={20}
+          />
+          <a
+            href="https://github.com/JustFrozt/ZeroForm-Showcase"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-900 transition"
+          >
+            View the GitHub Repository →
+          </a>
+        </div>
       </section>
 
       {/* ------------------------------------------------------------------ */}
