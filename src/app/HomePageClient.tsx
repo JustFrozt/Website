@@ -426,9 +426,16 @@ export default function HomePageClient() {
       {/* ------------------------------------------------------------------ */}
       {/* FOOTER                                                             */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
+      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900">
         <p>ZeroForm – Generating the future</p>
         <p className="mt-1">© {new Date().getFullYear()} ZeroFormAI. All Rights Reserved.</p>
+        
+        {/* Legal Link Added Here */}
+        <div className="mt-4">
+          <a href="/legal/terms.html" className="hover:text-indigo-600 transition-colors">
+            Terms of Service
+          </a>
+        </div>
       </footer>
     </main>
   );
