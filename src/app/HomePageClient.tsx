@@ -110,11 +110,11 @@ export default function HomePageClient() {
         <ol className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {[
             {
-              title: "Submit Your Idea",
+              title: "Tell Us Your MVP Idea",
               desc: "Tell us what you need via the form below."
             },
             {
-              title: "Review & Quote",
+              title: "Approve Fixed Price",
               desc: "We’ll review your request, confirm the scope, and send a fixed‑price quote based on complexity."
             },
             {
