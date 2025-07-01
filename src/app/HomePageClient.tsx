@@ -84,7 +84,7 @@ export default function HomePageClient() {
         {/* CORRECTED: Removed redundant nested <span> tags */}
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
           Fully <span className="text-indigo-600">Tested</span>
-          <abbr title="Minimum Viable Product" className="no-underline cursor-help"> Python MVPs</abbr>
+          <abbr title="Minimum Viable Product" className="no-underline cursor-help"> Python MVPs </abbr>
           - Delivered in <span className="text-indigo-600">48 Hours</span>
         </h1>
 
