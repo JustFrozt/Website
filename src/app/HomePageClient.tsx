@@ -81,18 +81,28 @@ export default function HomePageClient() {
         id="top"
         className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
+        {/* CORRECTED: Removed redundant nested <span> tags */}
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully <span className="text-indigo-600"><span className="text-indigo-600">Tested</span><abbr title="Minimum Viable Product" className="no-underline cursor-help"> Python MVPs</abbr> - Delivered in <span className="text-indigo-600"><span className="text-indigo-600">48</span> Hours</span>
+          Fully <span className="text-indigo-600">Tested</span>
+          <abbr title="Minimum Viable Product" className="no-underline cursor-help"> Python MVPs</abbr>
+          - Delivered in <span className="text-indigo-600">48 Hours</span>
         </h1>
+
         <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
           Your personal AI back‑end engineer and development team, on demand.
         </p>
-        <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">(MVP = Minimum Viable Product, your first deployable version)</span>
+
+        <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          (MVP = Minimum Viable Product, your first deployable version)
+        </span>
+
         <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
           Professional‑grade MVPs and back‑ends built exclusively in Python, Examples include: APIs, data pipelines, CLI
           tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase, planned,
           generated, refined, tested, and ready to deploy.
         </p>
+
+        {/* REMINDER: Ensure the 'handleScrollTo' function is defined in your component. */}
         <button
           type="button"
           onClick={() => handleScrollTo("#contact")}
