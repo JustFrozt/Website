@@ -43,6 +43,35 @@ export default function HomePageClient() {
     return () => links.forEach((link) => link.removeEventListener("click", handler));
   }, []);
 
+  const exampleCode = `
+<span class="text-gray-500"># 1. Describe your app requirements</span>
+<span class="text-gray-500"># 2. Our AI generates the full codebase</span>
+<span class="text-gray-500"># 3. We review, polish, and deliver</span>
+
+<span class="text-pink-400">from</span> fastapi <span class="text-pink-400">import</span> FastAPI
+<span class="text-pink-400">from</span> pydantic <span class="text-pink-400">import</span> BaseModel
+
+<span class="text-gray-500"># Fully typed, documented, and ready for production</span>
+app = <span class="text-cyan-400">FastAPI</span>(
+    title=<span class="text-yellow-300">"ZeroForm Showcase API"</span>,
+    version=<span class="text-yellow-300">"1.0.0"</span>,
+)
+
+<span class="text-blue-400">class</span> <span class="text-green-400">Note</span>(BaseModel):
+    id: int
+    content: str
+
+@app.post(<span class="text-yellow-300">"/notes/"</span>, status_code=201, tags=[<span class="text-yellow-300">"Notes"</span>])
+<span class="text-blue-400">async def</span> <span class="text-purple-400">create_note</span>(note: Note):
+    <span class="text-yellow-300">"""
+    Create a new note.
+    - Full CRUD, auth, and tests are auto-generated.
+    - You get a repo with 100% test coverage.
+    """</span>
+    <span class="text-gray-500"># ... database logic here ...</span>
+    <span class="text-pink-400">return</span> {<span class="text-yellow-300">"status"</span>: <span class="text-yellow-300">"success"</span>, <span class="text-yellow-300">"note_id"</span>: note.id}
+  `.trim();
+
   return (
     <main className="font-sans text-gray-900 bg-white scroll-smooth selection:bg-indigo-100 dark:bg-gray-900 dark:text-gray-100">
       {/* ------------------------------------------------------------------ */}
@@ -75,34 +104,22 @@ export default function HomePageClient() {
       </header>
 
       {/* ------------------------------------------------------------------ */}
-      {/* HERO                                                               */}
+      {/* HERO (IMPROVED)                                                    */}
       {/* ------------------------------------------------------------------ */}
       <section
         id="top"
-        className="pt-24 min-h-[80vh] flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
+        className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-24 flex flex-col items-center px-6 text-center bg-gradient-to-br from-white via-gray-50 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 scroll-mt-32 lg:scroll-mt-24"
       >
-        {/* CORRECTED: Removed redundant nested <span> tags */}
-        <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4">
-          Fully <span className="text-indigo-600">Tested</span>
-          <abbr title="Minimum Viable Product" className="no-underline cursor-help"> Python MVPs </abbr>
-          - Delivered in <span className="text-indigo-600">48 Hours</span>
+        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-4">
+          Production-Grade Python Backends.
+          <br />
+          <span className="text-indigo-600">Delivered in Days.</span>
         </h1>
 
-        <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Your personal AI back‑end engineer and development team, on demand.
+        <p className="max-w-3xl text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8">
+          Your on-demand AI engineering team for APIs, data pipelines, and CLI tools. Fully tested, documented, and ready to deploy.
         </p>
 
-        <span className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-          (MVP = Minimum Viable Product, your first deployable version)
-        </span>
-
-        <p className="max-w-2xl text-lg sm:text-xl mb-8 text-gray-800 dark:text-gray-200">
-          Professional‑grade MVPs and back‑ends built exclusively in Python, Examples include: APIs, data pipelines, CLI
-          tools, and automations. Auth, CRUD, tests, and docs included. Your entire codebase, planned,
-          generated, refined, tested, and ready to deploy.
-        </p>
-
-        {/* REMINDER: Ensure the 'handleScrollTo' function is defined in your component. */}
         <button
           type="button"
           onClick={() => handleScrollTo("#contact")}
@@ -110,6 +127,24 @@ export default function HomePageClient() {
         >
           Request Your MVP →
         </button>
+
+        {/* --- Visual Element: Code Window --- */}
+        <div className="relative mt-16 sm:mt-20 w-full max-w-4xl">
+          <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl opacity-20 blur-2xl"></div>
+          <div className="relative w-full bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-2xl border border-white/10">
+            <div className="h-10 px-4 flex items-center gap-2 bg-gray-700/50 dark:bg-gray-800/50 rounded-t-xl border-b border-white/10">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre className="p-5 text-left overflow-x-auto">
+              <code
+                className="font-mono text-sm text-gray-200"
+                dangerouslySetInnerHTML={{ __html: exampleCode }}
+              />
+            </pre>
+          </div>
+        </div>
       </section>
 
       {/* ------------------------------------------------------------------ */}
