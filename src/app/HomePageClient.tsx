@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Script from 'next/script';
-import { TerminalSquare, Sparkles, Settings } from 'lucide-react';
+import { TerminalSquare, Sparkles, Settings, CheckCircle2 } from 'lucide-react';
 
 export default function HomePageClient() {
   // Reusable scroll handler for buttons, respecting reduced motion
@@ -104,7 +104,7 @@ app = <span class="text-cyan-400">FastAPI</span>(
       </header>
 
       {/* ------------------------------------------------------------------ */}
-      {/* HERO (IMPROVED)                                                    */}
+      {/* HERO                                                               */}
       {/* ------------------------------------------------------------------ */}
       <section
         id="top"
@@ -116,9 +116,24 @@ app = <span class="text-cyan-400">FastAPI</span>(
           <span className="text-indigo-600">Delivered in Days.</span>
         </h1>
 
-        <p className="max-w-3xl text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-          Your on-demand full engineering team superchanged by AI - Creating your: APIs, Aata pipelines, CLI tools, Anything Python. Fully Tested, Secure, Documented, and Ready to Deploy.
+        <p className="max-w-3xl text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-6">
+          Your on-demand engineering team, supercharged by AI. We build APIs, data pipelines, CLI tools, and more.
         </p>
+
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-lg text-gray-800 dark:text-gray-200">
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-green-500" />
+            Fully Tested
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-green-500" />
+            Secure & Documented
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-green-500" />
+            Ready to Deploy
+          </span>
+        </div>
 
         <button
           type="button"
