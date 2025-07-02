@@ -104,7 +104,7 @@ app = <span class="text-cyan-400">FastAPI</span>(
       </header>
 
       {/* ------------------------------------------------------------------ */}
-      {/* HERO                                                               */}
+      {/* HERO (IMPROVED)                                                    */}
       {/* ------------------------------------------------------------------ */}
       <section
         id="top"
@@ -143,8 +143,19 @@ app = <span class="text-cyan-400">FastAPI</span>(
           Request Your Product →
         </button>
 
+        {/* --- CI Badge as social proof --- */}
+        <div className="mt-8">
+          <Image
+            src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
+            alt="GitHub CI build status: passing"
+            width={148}
+            height={20}
+            priority
+          />
+        </div>
+
         {/* --- Visual Element: Code Window --- */}
-        <div className="relative mt-16 sm:mt-20 w-full max-w-4xl">
+        <div className="relative mt-12 sm:mt-16 w-full max-w-4xl">
           <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl opacity-20 blur-2xl"></div>
           <div className="relative w-full bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-2xl border border-white/10">
             <div className="h-10 px-4 flex items-center gap-2 bg-gray-700/50 dark:bg-gray-800/50 rounded-t-xl border-b border-white/10">
@@ -222,7 +233,7 @@ app = <span class="text-cyan-400">FastAPI</span>(
           </p>
           <Image
             src="https://github.com/JustFrozt/ZeroForm-Showcase/actions/workflows/ci.yml/badge.svg"
-            alt="GitHub CI badge indicating build status"
+            alt="GitHub CI build status: passing"
             className="mb-4"
             width={148}
             height={20}
