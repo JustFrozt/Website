@@ -117,7 +117,7 @@ app = <span class="text-cyan-400">FastAPI</span>(
         </h1>
 
         <p className="max-w-3xl text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-          Your on-demand AI engineering team for APIs, data pipelines, and CLI tools. Fully tested, documented, and ready to deploy.
+          Your on-demand full engineering team superchanged by AI - Creating your: APIs, Aata pipelines, CLI tools, Anything Python. Fully Tested, Secure, Documented, and Ready to Deploy.
         </p>
 
         <button
@@ -125,7 +125,7 @@ app = <span class="text-cyan-400">FastAPI</span>(
           onClick={() => handleScrollTo("#contact")}
           className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ring-offset-2 ring-offset-gray-200 dark:ring-offset-gray-900 transition"
         >
-          Request Your MVP →
+          Request Your Product →
         </button>
 
         {/* --- Visual Element: Code Window --- */}
